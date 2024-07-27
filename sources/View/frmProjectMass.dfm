@@ -29,6 +29,7 @@ object FormProjectMass: TFormProjectMass
       Top = 0
       Caption = 'Zamknij'
       ImageIndex = 0
+      OnClick = btnCloseClick
     end
     object separatorBarMain1: TToolButton
       Left = 105
@@ -43,6 +44,7 @@ object FormProjectMass: TFormProjectMass
       Top = 0
       Caption = 'Ustawienia'
       ImageIndex = 1
+      OnClick = btnOpenSettingsClick
     end
     object separatorBarMain2: TToolButton
       Left = 218

@@ -10,5 +10,8 @@ object FormSettings: TFormSettings
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  Position = poScreenCenter
+  OnClose = FormClose
+  OnDestroy = FormDestroy
   TextHeight = 15
 end

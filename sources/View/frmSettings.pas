@@ -8,6 +8,8 @@ uses
 
 type
   TFormSettings = class(TForm)
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure FormDestroy(Sender: TObject);
   private
     { Private declarations }
   public
@@ -20,5 +22,15 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TFormSettings.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  Action := caFree;
+end;
+
+procedure TFormSettings.FormDestroy(Sender: TObject);
+begin
+  FormSettings := nil;
+end;
 
 end.
