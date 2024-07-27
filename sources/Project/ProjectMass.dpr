@@ -2,7 +2,8 @@ program ProjectMass;
 
 uses
   Vcl.Forms,
-  frmProjectMass in '..\View\frmProjectMass.pas' {FormProjectMass};
+  frmProjectMass in '..\View\frmProjectMass.pas' {FormProjectMass},
+  frmSettings in '..\View\frmSettings.pas' {FormSettings};
 
 {$R *.res}
 
