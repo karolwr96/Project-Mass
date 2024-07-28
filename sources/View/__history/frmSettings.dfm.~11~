@@ -1,0 +1,50 @@
+object FormSettings: TFormSettings
+  Left = 0
+  Top = 0
+  Caption = 'Ustawienia'
+  ClientHeight = 433
+  ClientWidth = 622
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  Position = poScreenCenter
+  OnClose = FormClose
+  OnDestroy = FormDestroy
+  TextHeight = 15
+  object lblDbName: TLabel
+    Left = 0
+    Top = 8
+    Width = 175
+    Height = 25
+    Alignment = taCenter
+    AutoSize = False
+    Caption = 'Nazwa bazy danych'
+    Color = clBtnFace
+    ParentColor = False
+    Layout = tlCenter
+  end
+  object lblDbServer: TLabel
+    Left = 0
+    Top = 39
+    Width = 175
+    Height = 25
+    Alignment = taCenter
+    Caption = 'Serwer bazy danych'
+    Layout = tlCenter
+  end
+  object edtDbName: TEdit
+    Left = 170
+    Top = 8
+    Width = 175
+    Height = 25
+    Alignment = taCenter
+    AutoSelect = False
+    AutoSize = False
+    Color = clWhite
+    TabOrder = 0
+    Text = 'DB Name'
+  end
+end

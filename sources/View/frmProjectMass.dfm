@@ -1,7 +1,8 @@
 object FormProjectMass: TFormProjectMass
   Left = 0
   Top = 0
-  Caption = 'Program Projekt Masa'
+  Action = actSettings
+  Caption = 'actSettings'
   ClientHeight = 433
   ClientWidth = 622
   Color = clBtnFace
@@ -11,6 +12,7 @@ object FormProjectMass: TFormProjectMass
   Font.Name = 'Segoe UI'
   Font.Style = []
   Position = poScreenCenter
+  OnClick = actSettingsExecute
   TextHeight = 15
   object barMain: TToolBar
     Left = 0
@@ -28,7 +30,7 @@ object FormProjectMass: TFormProjectMass
       Left = 0
       Top = 0
       Caption = 'Zamknij'
-      ImageIndex = 0
+      OnClick = actCloseExecute
     end
     object separatorBarMain1: TToolButton
       Left = 105
@@ -43,6 +45,7 @@ object FormProjectMass: TFormProjectMass
       Top = 0
       Caption = 'Ustawienia'
       ImageIndex = 1
+      OnClick = actSettingsExecute
     end
     object separatorBarMain2: TToolButton
       Left = 218
@@ -75,7 +78,7 @@ object FormProjectMass: TFormProjectMass
   end
   object actionListMainMenu: TActionList
     Left = 16
-    Top = 104
+    Top = 88
     object actClose: TAction
       Caption = 'actClose'
       OnExecute = actCloseExecute

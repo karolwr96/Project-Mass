@@ -1,0 +1,16 @@
+unit cManagerSettings;
+
+interface
+
+uses
+
+type
+TManagerSettings = class
+  private
+    FItemSettings : TItemSettings;
+    FItemSettingsTmp : TItemSettings;
+    FPathToFile : string;
+                 end;
+implementation
+
+end.
