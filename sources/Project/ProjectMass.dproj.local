@@ -1,12 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
 	<Transactions>
-    <Transaction>1899.12.30 00:00:00.000.072,C:\Programy11\Project-Mass\sources\Project\Unit1.pas=C:\Programy11\Project-Mass\sources\View\frmSettings.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.660,C:\Programy11\Project-Mass\sources\View\frmProjectMass.pas=C:\Users\karol\OneDrive\Dokumenty\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.609,=C:\Users\karol\OneDrive\Dokumenty\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.384,C:\Users\karol\OneDrive\Dokumenty\Embarcadero\Studio\Projects\Project1.dproj=C:\Programy11\Project-Mass\sources\Project\ProjectMass.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.072,C:\Programy11\Project-Mass\sources\View\frmSettings.dfm=C:\Programy11\Project-Mass\sources\Project\Unit1.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.072,C:\Programy11\Project-Mass\sources\View\frmSettings.pas=C:\Programy11\Project-Mass\sources\Project\Unit1.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.407,=C:\Programy11\Project-Mass\sources\Project\Unit1.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.384,C:\Programy11\Project-Mass\sources\Project\ProjectMass.dproj=C:\Users\karol\OneDrive\Dokumenty\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.660,C:\Programy11\Project-Mass\sources\View\frmProjectMass.dfm=C:\Users\karol\OneDrive\Dokumenty\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.072,C:\Programy11\Project-Mass\sources\Project\Unit1.dfm=C:\Programy11\Project-Mass\sources\View\frmSettings.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.660,C:\Users\karol\OneDrive\Dokumenty\Embarcadero\Studio\Projects\Unit1.dfm=C:\Programy11\Project-Mass\sources\View\frmProjectMass.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.660,C:\Users\karol\OneDrive\Dokumenty\Embarcadero\Studio\Projects\Unit1.pas=C:\Programy11\Project-Mass\sources\View\frmProjectMass.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.609,=C:\Users\karol\OneDrive\Dokumenty\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024.07.27 20:37:46.672,=C:\Programy11\Project-Mass\sources\Helper\uEncryptStr.pas</Transaction>
+    <Transaction>2024.07.27 20:37:46.719,=C:\Programy11\Project-Mass\sources\Helper\uHelpFunctions.pas</Transaction>
+    <Transaction>2024.07.27 20:37:46.735,=C:\Programy11\Project-Mass\sources\Helper\uIniXml.pas</Transaction>
   </Transactions>
 </BorlandProject>

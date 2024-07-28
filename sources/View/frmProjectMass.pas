@@ -18,8 +18,11 @@ type
     btnAddContractor: TToolButton;
     separatorBarMain3: TToolButton;
     btnAddProduct: TToolButton;
-    procedure btnCloseClick(Sender: TObject);
-    procedure btnOpenSettingsClick(Sender: TObject);
+    actionListMainMenu: TActionList;
+    actClose: TAction;
+    actSettings: TAction;
+    procedure actCloseExecute(Sender: TObject);
+    procedure actSettingsExecute(Sender: TObject);
   private
     { Private declarations }
   public
@@ -36,14 +39,14 @@ implementation
 uses
   frmSettings;
 
-procedure TFormProjectMass.btnCloseClick(Sender: TObject);
+procedure TFormProjectMass.actCloseExecute(Sender: TObject);
 begin
   Application.MainForm.Close();
 end;
 
-procedure TFormProjectMass.btnOpenSettingsClick(Sender: TObject);
+procedure TFormProjectMass.actSettingsExecute(Sender: TObject);
 begin
-  if FormSettings = nil then
+ if FormSettings = nil then
     FormSettings := TFormSettings.Create(Application);
   FormSettings.ShowModal;
 end;
