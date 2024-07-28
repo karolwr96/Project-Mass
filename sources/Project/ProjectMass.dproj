@@ -111,6 +111,9 @@
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="..\Controller\cManagerSettings.pas"/>
+        <DCCReference Include="..\Helper\uIniXml.pas"/>
+        <DCCReference Include="..\Helper\uEncryptStr.pas"/>
+        <DCCReference Include="..\Model\cItemSettings.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

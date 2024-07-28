@@ -4,7 +4,10 @@ uses
   Vcl.Forms,
   frmProjectMass in '..\View\frmProjectMass.pas' {FormProjectMass},
   frmSettings in '..\View\frmSettings.pas' {FormSettings},
-  cManagerSettings in '..\Controller\cManagerSettings.pas';
+  cManagerSettings in '..\Controller\cManagerSettings.pas',
+  uIniXml in '..\Helper\uIniXml.pas',
+  uEncryptStr in '..\Helper\uEncryptStr.pas',
+  cItemSettings in '..\Model\cItemSettings.pas';
 
 {$R *.res}
 

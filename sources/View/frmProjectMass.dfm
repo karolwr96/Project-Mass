@@ -11,6 +11,7 @@ object FormProjectMass: TFormProjectMass
   Font.Name = 'Segoe UI'
   Font.Style = []
   Position = poScreenCenter
+  OnCreate = FormCreate
   TextHeight = 15
   object barMain: TToolBar
     Left = 0

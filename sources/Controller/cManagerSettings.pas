@@ -79,9 +79,6 @@ begin
       FItemSettings.DbPass := iniTmp.ReadParamStr('BD/BD_PASS');
       FItemSettings.DbPath := iniTmp.ReadParamStr('BD/BD_PATH');
 
-
-
-
     Except
       //powinno byæ obs³u¿one
     End;
