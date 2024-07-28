@@ -1,0 +1,24 @@
+unit cManagerSettings;
+
+interface
+
+
+
+type
+TManagerSettings = class
+  private
+    //FItemSettings : TItemSettings;
+    //FItemSettingsTmp : TItemSettings;
+    FPathToFile : string;
+
+    class var FInstance : TManagerSettings;
+    constructor CreateInstance;
+    destructor Destroy(); override;
+
+
+
+
+end;
+implementation
+
+end.

@@ -1,0 +1,22 @@
+unit cManagerSettings;
+
+interface
+
+
+
+type
+TManagerSettings = class
+  private
+    //FItemSettings : TItemSettings;
+    //FItemSettingsTmp : TItemSettings;
+    FPathToFile : string;
+
+    class var FInstance : TManagerSettings;
+
+
+
+
+end;
+implementation
+
+end.

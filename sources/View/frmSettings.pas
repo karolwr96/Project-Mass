@@ -4,7 +4,8 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, System.Actions,
+  Vcl.ActnList, Vcl.ExtCtrls;
 
 type
   TFormSettings = class(TForm)
@@ -16,13 +17,21 @@ type
     edtDbServer: TEdit;
     edtDbUser: TEdit;
     edtDbPassword: TEdit;
+    btnSaveSettings: TButton;
+    btnClose: TButton;
+    actSettings: TActionList;
+    actCloseSettings: TAction;
+    actSaveSettings: TAction;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormDestroy(Sender: TObject);
+    procedure actCloseSettingsExecute(Sender: TObject);
+    procedure actSaveSettingsExecute(Sender: TObject);
+
 
   private
     { Private declarations }
   public
-    { Public declarations }
+    constructor Create(AOwner : TComponent); reintroduce; overload;
   end;
 
 var
@@ -32,6 +41,39 @@ implementation
 
 {$R *.dfm}
 
+uses cManagerSettings;
+
+procedure TFormSettings.actSaveSettingsExecute(Sender: TObject);
+begin
+  with TManagerSettings.Instance do begin
+    ItemSettingsTmp.DbPath := edtDbName.Text;
+    ItemSettingsTmp.DbServerName := edtDbServer.Text;
+    ItemSettingsTmp.DbLogin := edtDbUser.Text;
+    ItemSettingsTmp.DbPass := edtDbPassword.Text;
+    if SaveToFile() then begin
+      ItemSettings.AssignValues(ItemSettingsTmp);
+      ModalResult := mrOk;
+    end else begin
+      ShowMessage('B³¹d zapisu');
+    end;
+  end;
+end;
+
+constructor TFormSettings.Create(AOwner: TComponent);
+begin
+  inherited Create(AOwner);
+
+  TManagerSettings.Instance.ItemSettingsTmp.AssignValues(TManagerSettings.Instance.ItemSettings);
+  edtDbName.Text := TManagerSettings.Instance.ItemSettingsTmp.DbPath;
+  edtDbServer.Text := TManagerSettings.Instance.ItemSettingsTmp.DbServerName;
+  edtDbUser.Text := TManagerSettings.Instance.ItemSettingsTmp.DbLogin;
+  edtDbPassword.Text := TManagerSettings.Instance.ItemSettingsTmp.DbPass;
+end;
+
+procedure TFormSettings.actCloseSettingsExecute(Sender: TObject);
+begin
+  Self.Close;
+end;
 
 procedure TFormSettings.FormClose(Sender: TObject; var Action: TCloseAction);
 begin

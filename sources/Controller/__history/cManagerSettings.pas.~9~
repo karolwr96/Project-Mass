@@ -1,0 +1,53 @@
+unit cManagerSettings;
+
+interface
+
+uses
+  Classes, cItemSettings;
+
+type
+TManagerSettings = class
+
+  private
+    FItemSettings : TItemSettings;
+    FItemSettingsTmp : TItemSettings;
+    FPathToFile : string;
+
+    class var FInstance : TManagerSettings;
+    constructor CreateInstance;
+    destructor Destroy(); override;
+
+    constructor Create(); overload;
+
+
+end;
+implementation
+
+uses
+  SysUtils, uIniXml;
+
+constructor TManagerSettings.Create;
+begin
+  inherited Create;
+  raise Exception.CreateFmt('Access class %s through Instance only', [ClassName]);
+end;
+
+constructor TManagerSettings.CreateInstance;
+begin
+  inherited Create;
+  // Zainicjuj/stwórz tutaj prywatne zmienne
+  FItemSettings := TItemSettings.Create;
+  FItemSettingsTmp := TItemSettings.Create;
+  FPathToFile := IncludeTrailingPathDelimiter(ExtractFileDir(ParamStr(0))) + 'PMSettings.xml';
+end;
+
+destructor TManagerSettings.Destroy;
+begin
+  //Zniszcz tutaj prywatne zmienne
+  FItemSettings.Free;
+  FItemSettingsTmp.Free;
+
+  inherited;
+end;
+
+end.

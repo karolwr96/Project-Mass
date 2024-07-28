@@ -20,7 +20,7 @@ object FormSettings: TFormSettings
     Width = 175
     Height = 25
     AutoSize = False
-    Caption = 'Nazwa bazy danych:'
+    Caption = 'Lokalizacja bazy danych:'
     Color = clBtnFace
     ParentColor = False
     Layout = tlCenter
@@ -55,7 +55,7 @@ object FormSettings: TFormSettings
   object edtDbName: TEdit
     Left = 202
     Top = 8
-    Width = 175
+    Width = 199
     Height = 25
     AutoSelect = False
     AutoSize = False
@@ -65,22 +65,52 @@ object FormSettings: TFormSettings
   object edtDbServer: TEdit
     Left = 202
     Top = 39
-    Width = 175
-    Height = 30
+    Width = 199
+    Height = 23
     TabOrder = 1
   end
   object edtDbUser: TEdit
     Left = 202
     Top = 75
-    Width = 175
-    Height = 25
+    Width = 199
+    Height = 23
     TabOrder = 2
   end
   object edtDbPassword: TEdit
     Left = 202
     Top = 106
-    Width = 175
-    Height = 25
+    Width = 199
+    Height = 23
     TabOrder = 3
+  end
+  object btnSaveSettings: TButton
+    Left = 304
+    Top = 137
+    Width = 96
+    Height = 25
+    Action = actSaveSettings
+    Caption = 'Zapisz'
+    TabOrder = 4
+  end
+  object btnClose: TButton
+    Left = 202
+    Top = 137
+    Width = 96
+    Height = 25
+    Action = actCloseSettings
+    Caption = 'Zamknij'
+    TabOrder = 5
+  end
+  object actSettings: TActionList
+    Left = 32
+    Top = 216
+    object actCloseSettings: TAction
+      Caption = 'actCloseSettings'
+      OnExecute = actCloseSettingsExecute
+    end
+    object actSaveSettings: TAction
+      Caption = 'actSaveSettings'
+      OnExecute = actSaveSettingsExecute
+    end
   end
 end

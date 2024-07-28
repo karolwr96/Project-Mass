@@ -23,6 +23,7 @@ type
     actSettings: TAction;
     procedure actCloseExecute(Sender: TObject);
     procedure actSettingsExecute(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -37,7 +38,7 @@ implementation
 {$R *.dfm}
 
 uses
-  frmSettings;
+  frmSettings, cManagerSettings;
 
 procedure TFormProjectMass.actCloseExecute(Sender: TObject);
 begin
@@ -48,7 +49,14 @@ procedure TFormProjectMass.actSettingsExecute(Sender: TObject);
 begin
  if FormSettings = nil then
     FormSettings := TFormSettings.Create(Application);
-  FormSettings.ShowModal;
+    if FormSettings.ShowModal = mrOk then begin
+    ShowMessage('Poprawnie zapisano ustawienia!');
+  end;
+end;
+
+procedure TFormProjectMass.FormCreate(Sender: TObject);
+begin
+  TManagerSettings.Instance.ReadFromFile;
 end;
 
 end.

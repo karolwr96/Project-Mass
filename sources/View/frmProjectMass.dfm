@@ -1,8 +1,7 @@
 object FormProjectMass: TFormProjectMass
   Left = 0
   Top = 0
-  Action = actSettings
-  Caption = 'actSettings'
+  Caption = 'Program Projekt Masa'
   ClientHeight = 433
   ClientWidth = 622
   Color = clBtnFace
@@ -12,7 +11,6 @@ object FormProjectMass: TFormProjectMass
   Font.Name = 'Segoe UI'
   Font.Style = []
   Position = poScreenCenter
-  OnClick = actSettingsExecute
   TextHeight = 15
   object barMain: TToolBar
     Left = 0
