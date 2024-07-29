@@ -4,10 +4,17 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, System.Actions, Vcl.ActnList,
+  Vcl.StdCtrls;
 
 type
   TFormAddContractor = class(TForm)
+    actAddContractor: TActionList;
+    lblContractorName: TLabel;
+    lblPostCode: TLabel;
+    lblTown: TLabel;
+    lblStreet: TLabel;
+    lblHouseNumber: TLabel;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormDestroy(Sender: TObject);
   private
