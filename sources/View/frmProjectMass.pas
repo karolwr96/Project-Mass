@@ -21,9 +21,11 @@ type
     actionListMainMenu: TActionList;
     actClose: TAction;
     actSettings: TAction;
+    actContractor: TAction;
     procedure actCloseExecute(Sender: TObject);
     procedure actSettingsExecute(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure actContractorExecute(Sender: TObject);
   private
     { Private declarations }
   public
@@ -38,11 +40,20 @@ implementation
 {$R *.dfm}
 
 uses
-  frmSettings, cManagerSettings;
+  frmSettings, cManagerSettings, frmAddContractor;
 
 procedure TFormProjectMass.actCloseExecute(Sender: TObject);
 begin
   Application.MainForm.Close();
+end;
+
+procedure TFormProjectMass.actContractorExecute(Sender: TObject);
+begin
+if FormAddContractor = nil then
+  begin
+  FormAddContractor := TFormAddContractor.Create(Application);
+  FormAddContractor.ShowModal();
+  end;
 end;
 
 procedure TFormProjectMass.actSettingsExecute(Sender: TObject);

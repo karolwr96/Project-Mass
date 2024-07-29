@@ -7,7 +7,8 @@ uses
   cManagerSettings in '..\Controller\cManagerSettings.pas',
   uIniXml in '..\Helper\uIniXml.pas',
   uEncryptStr in '..\Helper\uEncryptStr.pas',
-  cItemSettings in '..\Model\cItemSettings.pas';
+  cItemSettings in '..\Model\cItemSettings.pas',
+  frmAddContractor in '..\View\frmAddContractor.pas' {FormAddContractor};
 
 {$R *.res}
 

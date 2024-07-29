@@ -114,6 +114,10 @@
         <DCCReference Include="..\Helper\uIniXml.pas"/>
         <DCCReference Include="..\Helper\uEncryptStr.pas"/>
         <DCCReference Include="..\Model\cItemSettings.pas"/>
+        <DCCReference Include="..\View\frmAddContractor.pas">
+            <Form>FormAddContractor</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

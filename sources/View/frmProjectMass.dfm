@@ -58,7 +58,7 @@ object FormProjectMass: TFormProjectMass
       Left = 226
       Top = 0
       Caption = 'Dodaj kontrahenta'
-      ImageIndex = 2
+      OnClick = actContractorExecute
     end
     object separatorBarMain3: TToolButton
       Left = 331
@@ -76,8 +76,8 @@ object FormProjectMass: TFormProjectMass
     end
   end
   object actionListMainMenu: TActionList
-    Left = 16
-    Top = 88
+    Left = 80
+    Top = 168
     object actClose: TAction
       Caption = 'actClose'
       OnExecute = actCloseExecute
@@ -85,6 +85,10 @@ object FormProjectMass: TFormProjectMass
     object actSettings: TAction
       Caption = 'actSettings'
       OnExecute = actSettingsExecute
+    end
+    object actContractor: TAction
+      Caption = 'Action1'
+      OnExecute = actContractorExecute
     end
   end
 end
