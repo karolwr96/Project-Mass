@@ -26,6 +26,7 @@ type
     procedure FormDestroy(Sender: TObject);
     procedure actCloseSettingsExecute(Sender: TObject);
     procedure actSaveSettingsExecute(Sender: TObject);
+    procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
 
 
   private
@@ -85,5 +86,10 @@ begin
   FormSettings := nil;
 end;
 
+procedure TFormSettings.FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+begin
+  if Key = VK_ESCAPE then
+    Self.Close;
+end;
 
 end.

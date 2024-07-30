@@ -10,9 +10,11 @@ object FormSettings: TFormSettings
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  KeyPreview = True
   Position = poScreenCenter
   OnClose = FormClose
   OnDestroy = FormDestroy
+  OnKeyDown = FormKeyDown
   TextHeight = 15
   object lblDbName: TLabel
     Left = 32
@@ -54,7 +56,7 @@ object FormSettings: TFormSettings
   end
   object edtDbName: TEdit
     Left = 202
-    Top = 8
+    Top = 10
     Width = 199
     Height = 25
     AutoSelect = False
@@ -70,14 +72,14 @@ object FormSettings: TFormSettings
     TabOrder = 1
   end
   object edtDbUser: TEdit
-    Left = 202
+    Left = 201
     Top = 85
     Width = 199
     Height = 23
     TabOrder = 2
   end
   object edtDbPassword: TEdit
-    Left = 202
+    Left = 201
     Top = 124
     Width = 199
     Height = 23
@@ -103,7 +105,7 @@ object FormSettings: TFormSettings
   end
   object actSettings: TActionList
     Left = 32
-    Top = 216
+    Top = 272
     object actCloseSettings: TAction
       Caption = 'actCloseSettings'
       OnExecute = actCloseSettingsExecute

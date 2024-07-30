@@ -24,5 +24,21 @@
     <Transaction>2024.07.29 20:35:48.511,=C:\Programy11\Project-Mass\sources\Project\Unit1.pas</Transaction>
     <Transaction>2024.07.29 20:36:27.879,C:\Programy11\Project-Mass\sources\View\frmAddContractor.pas=C:\Programy11\Project-Mass\sources\Project\Unit1.pas</Transaction>
     <Transaction>2024.07.29 20:36:27.879,C:\Programy11\Project-Mass\sources\View\frmAddContractor.dfm=C:\Programy11\Project-Mass\sources\Project\Unit1.dfm</Transaction>
-  </Transactions>
+  </Transactions>  <ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="..\..\sources"/>
+    <File Path="..\Controller"/>
+    <File Path="..\Controller\cManagerSettings.pas"/>
+    <File Path="..\Helper"/>
+    <File Path="..\Helper\uEncryptStr.pas"/>
+    <File Path="..\Helper\uIniXml.pas"/>
+    <File Path="..\Model"/>
+    <File Path="..\Model\cItemSettings.pas"/>
+    <File Path="..\View"/>
+    <File Path="..\View\frmAddContractor.pas"/>
+    <File Path="..\View\frmAddContractor.dfm"/>
+    <File Path="..\View\frmProjectMass.pas"/>
+    <File Path="..\View\frmProjectMass.dfm"/>
+    <File Path="..\View\frmSettings.pas"/>
+    <File Path="..\View\frmSettings.dfm"/>
+  </ProjectSortOrder>
 </BorlandProject>

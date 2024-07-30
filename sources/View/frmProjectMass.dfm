@@ -2,8 +2,8 @@ object FormProjectMass: TFormProjectMass
   Left = 0
   Top = 0
   Caption = 'Program Projekt Masa'
-  ClientHeight = 433
-  ClientWidth = 622
+  ClientHeight = 425
+  ClientWidth = 620
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -16,7 +16,7 @@ object FormProjectMass: TFormProjectMass
   object barMain: TToolBar
     Left = 0
     Top = 0
-    Width = 622
+    Width = 620
     Height = 25
     ButtonHeight = 23
     ButtonWidth = 105
@@ -25,6 +25,7 @@ object FormProjectMass: TFormProjectMass
     ParentColor = False
     ShowCaptions = True
     TabOrder = 0
+    ExplicitWidth = 622
     object btnClose: TToolButton
       Left = 0
       Top = 0
@@ -32,7 +33,7 @@ object FormProjectMass: TFormProjectMass
       OnClick = actCloseExecute
     end
     object separatorBarMain1: TToolButton
-      Left = 105
+      Left = 131
       Top = 0
       Width = 8
       Caption = 'separatorBarMain1'
@@ -40,14 +41,14 @@ object FormProjectMass: TFormProjectMass
       Style = tbsSeparator
     end
     object btnOpenSettings: TToolButton
-      Left = 113
+      Left = 139
       Top = 0
       Caption = 'Ustawienia'
       ImageIndex = 1
       OnClick = actSettingsExecute
     end
     object separatorBarMain2: TToolButton
-      Left = 218
+      Left = 270
       Top = 0
       Width = 8
       Caption = 'separatorBarMain2'
@@ -55,13 +56,13 @@ object FormProjectMass: TFormProjectMass
       Style = tbsSeparator
     end
     object btnAddContractor: TToolButton
-      Left = 226
+      Left = 278
       Top = 0
       Caption = 'Dodaj kontrahenta'
       OnClick = actContractorExecute
     end
     object separatorBarMain3: TToolButton
-      Left = 331
+      Left = 409
       Top = 0
       Width = 8
       Caption = 'separatorBarMain3'
@@ -69,7 +70,7 @@ object FormProjectMass: TFormProjectMass
       Style = tbsSeparator
     end
     object btnAddProduct: TToolButton
-      Left = 339
+      Left = 417
       Top = 0
       Caption = 'Dodaj produkt'
       ImageIndex = 3
