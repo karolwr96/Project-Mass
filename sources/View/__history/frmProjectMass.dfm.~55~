@@ -87,10 +87,6 @@ object barMain: TbarMain
         item
           Visible = True
           ItemName = 'dxBarLargeButton4'
-        end
-        item
-          Visible = True
-          ItemName = 'dxBarLargeButton5'
         end>
       MultiLine = True
       OneOnRow = True
@@ -151,12 +147,6 @@ object barMain: TbarMain
       Visible = ivAlways
       SyncImageIndex = False
       ImageIndex = 4
-    end
-    object dxBarLargeButton5: TdxBarLargeButton
-      Caption = 'New Button'
-      Category = 0
-      Hint = 'New Button'
-      Visible = ivAlways
     end
   end
   object cxImageList1: TcxImageList
