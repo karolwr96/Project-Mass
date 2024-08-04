@@ -2,7 +2,7 @@ program ProjectMass;
 
 uses
   Vcl.Forms,
-  frmProjectMass in '..\View\frmProjectMass.pas' {FormProjectMass},
+  frmProjectMass in '..\View\frmProjectMass.pas' {barMain},
   frmSettings in '..\View\frmSettings.pas' {FormSettings},
   cManagerSettings in '..\Controller\cManagerSettings.pas',
   uIniXml in '..\Helper\uIniXml.pas',
@@ -15,6 +15,6 @@ uses
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
-  Application.CreateForm(TFormProjectMass, FormProjectMass);
+  Application.CreateForm(TbarMain, barMain);
   Application.Run;
 end.

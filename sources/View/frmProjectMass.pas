@@ -6,22 +6,42 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, Vcl.ExtCtrls, System.Actions,
   Vcl.ActnList, Vcl.ToolWin, Vcl.ActnMan, Vcl.ActnCtrls, Vcl.ActnMenus,
-  Vcl.StdCtrls, Vcl.ComCtrls;
+  Vcl.StdCtrls, Vcl.ComCtrls, cxGraphics, cxControls, cxLookAndFeels,
+  cxLookAndFeelPainters, dxSkinsCore, dxSkinBasic, dxSkinBlack, dxSkinBlue,
+  dxSkinBlueprint, dxSkinCaramel, dxSkinCoffee, dxSkinDarkroom, dxSkinDarkSide,
+  dxSkinDevExpressDarkStyle, dxSkinDevExpressStyle, dxSkinFoggy,
+  dxSkinGlassOceans, dxSkinHighContrast, dxSkiniMaginary, dxSkinLilian,
+  dxSkinLiquidSky, dxSkinLondonLiquidSky, dxSkinMcSkin, dxSkinMetropolis,
+  dxSkinMetropolisDark, dxSkinMoneyTwins, dxSkinOffice2007Black,
+  dxSkinOffice2007Blue, dxSkinOffice2007Green, dxSkinOffice2007Pink,
+  dxSkinOffice2007Silver, dxSkinOffice2010Black, dxSkinOffice2010Blue,
+  dxSkinOffice2010Silver, dxSkinOffice2013DarkGray, dxSkinOffice2013LightGray,
+  dxSkinOffice2013White, dxSkinOffice2016Colorful, dxSkinOffice2016Dark,
+  dxSkinOffice2019Black, dxSkinOffice2019Colorful, dxSkinOffice2019DarkGray,
+  dxSkinOffice2019White, dxSkinPumpkin, dxSkinSeven, dxSkinSevenClassic,
+  dxSkinSharp, dxSkinSharpPlus, dxSkinSilver, dxSkinSpringtime, dxSkinStardust,
+  dxSkinSummer2008, dxSkinTheAsphaltWorld, dxSkinTheBezier,
+  dxSkinsDefaultPainters, dxSkinValentine, dxSkinVisualStudio2013Blue,
+  dxSkinVisualStudio2013Dark, dxSkinVisualStudio2013Light, dxSkinVS2010,
+  dxSkinWhiteprint, dxSkinXmas2008Blue, dxNavBar, cxClasses, dxBar,
+  System.ImageList, Vcl.ImgList, cxImageList;
 
 type
-  TFormProjectMass = class(TForm)
-    barMain: TToolBar;
-    btnClose: TToolButton;
-    separatorBarMain1: TToolButton;
-    btnOpenSettings: TToolButton;
-    separatorBarMain2: TToolButton;
-    btnAddContractor: TToolButton;
-    separatorBarMain3: TToolButton;
-    btnAddProduct: TToolButton;
+  TbarMain = class(TForm)
     actionListMainMenu: TActionList;
     actClose: TAction;
     actSettings: TAction;
     actContractor: TAction;
+    dxBarManager1: TdxBarManager;
+    dxBarManager1Bar1: TdxBar;
+    cxImageList1: TcxImageList;
+    dxBarLargeButton1: TdxBarLargeButton;
+    dxBarLargeButton2: TdxBarLargeButton;
+    dxBarButton1: TdxBarButton;
+    dxBarButton2: TdxBarButton;
+    dxBarLargeButton3: TdxBarLargeButton;
+    dxBarButton3: TdxBarButton;
+    dxBarLargeButton4: TdxBarLargeButton;
     procedure actCloseExecute(Sender: TObject);
     procedure actSettingsExecute(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -33,7 +53,7 @@ type
   end;
 
 var
-  FormProjectMass: TFormProjectMass;
+  barMain: TbarMain;
 
 implementation
 
@@ -42,12 +62,12 @@ implementation
 uses
   frmSettings, cManagerSettings, frmAddContractor;
 
-procedure TFormProjectMass.actCloseExecute(Sender: TObject);
+procedure TbarMain.actCloseExecute(Sender: TObject);
 begin
   Application.MainForm.Close();
 end;
 
-procedure TFormProjectMass.actContractorExecute(Sender: TObject);
+procedure TbarMain.actContractorExecute(Sender: TObject);
 begin
 if FormAddContractor = nil then
   begin
@@ -56,7 +76,7 @@ if FormAddContractor = nil then
   end;
 end;
 
-procedure TFormProjectMass.actSettingsExecute(Sender: TObject);
+procedure TbarMain.actSettingsExecute(Sender: TObject);
 begin
  if FormSettings = nil then
     FormSettings := TFormSettings.Create(Application);
@@ -65,7 +85,8 @@ begin
   end;
 end;
 
-procedure TFormProjectMass.FormCreate(Sender: TObject);
+
+procedure TbarMain.FormCreate(Sender: TObject);
 begin
   TManagerSettings.Instance.ReadFromFile;
 end;
