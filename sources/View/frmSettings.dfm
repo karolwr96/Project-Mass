@@ -2,23 +2,27 @@ object FormSettings: TFormSettings
   Left = 0
   Top = 0
   Caption = 'Ustawienia'
-  ClientHeight = 433
-  ClientWidth = 622
+  ClientHeight = 425
+  ClientWidth = 620
   Color = clBtnFace
+  Constraints.MinHeight = 425
+  Constraints.MinWidth = 620
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
   KeyPreview = True
+  OldCreateOrder = True
   Position = poScreenCenter
   OnClose = FormClose
   OnDestroy = FormDestroy
   OnKeyDown = FormKeyDown
+  PixelsPerInch = 96
   TextHeight = 15
   object lblDbName: TLabel
-    Left = 32
-    Top = 8
+    Left = 138
+    Top = 65
     Width = 175
     Height = 25
     AutoSize = False
@@ -28,8 +32,8 @@ object FormSettings: TFormSettings
     Layout = tlCenter
   end
   object lblDbServer: TLabel
-    Left = 32
-    Top = 44
+    Left = 138
+    Top = 101
     Width = 175
     Height = 25
     AutoSize = False
@@ -37,8 +41,8 @@ object FormSettings: TFormSettings
     Layout = tlCenter
   end
   object lblDbUser: TLabel
-    Left = 32
-    Top = 83
+    Left = 138
+    Top = 140
     Width = 175
     Height = 25
     AutoSize = False
@@ -46,8 +50,8 @@ object FormSettings: TFormSettings
     Layout = tlCenter
   end
   object lblDbPassword: TLabel
-    Left = 32
-    Top = 122
+    Left = 138
+    Top = 179
     Width = 175
     Height = 25
     AutoSize = False
@@ -55,8 +59,8 @@ object FormSettings: TFormSettings
     Layout = tlCenter
   end
   object edtDbName: TEdit
-    Left = 202
-    Top = 10
+    Left = 308
+    Top = 67
     Width = 199
     Height = 25
     AutoSelect = False
@@ -65,43 +69,67 @@ object FormSettings: TFormSettings
     TabOrder = 0
   end
   object edtDbServer: TEdit
-    Left = 202
-    Top = 46
+    Left = 308
+    Top = 103
     Width = 199
     Height = 23
     TabOrder = 1
   end
   object edtDbUser: TEdit
-    Left = 201
-    Top = 85
+    Left = 307
+    Top = 142
     Width = 199
     Height = 23
     TabOrder = 2
   end
   object edtDbPassword: TEdit
-    Left = 201
-    Top = 124
+    Left = 307
+    Top = 181
     Width = 199
     Height = 23
     TabOrder = 3
   end
   object btnSaveSettings: TButton
-    Left = 304
-    Top = 161
-    Width = 96
+    Left = 331
+    Top = 225
+    Width = 140
     Height = 25
     Action = actSaveSettings
     Caption = 'Zapisz'
     TabOrder = 4
   end
   object btnClose: TButton
-    Left = 202
-    Top = 161
-    Width = 96
+    Left = 146
+    Top = 226
+    Width = 140
     Height = 25
     Action = actCloseSettings
     Caption = 'Zamknij'
     TabOrder = 5
+  end
+  object pnlBottomSettings: TPanel
+    Left = 0
+    Top = 384
+    Width = 620
+    Height = 41
+    Align = alBottom
+    Color = clWhite
+    ParentBackground = False
+    TabOrder = 6
+    ExplicitTop = 385
+  end
+  object pnlTopSettings: TPanel
+    Left = 0
+    Top = 0
+    Width = 620
+    Height = 41
+    Align = alTop
+    Caption = 'Dane dost'#281'powe do bazy danych'
+    Color = clWhite
+    ParentBackground = False
+    TabOrder = 7
+    ExplicitLeft = 1
+    ExplicitTop = 46
   end
   object actSettings: TActionList
     Left = 32

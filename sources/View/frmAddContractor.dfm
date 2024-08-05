@@ -5,20 +5,24 @@ object FormAddContractor: TFormAddContractor
   ClientHeight = 425
   ClientWidth = 620
   Color = clBtnFace
+  Constraints.MinHeight = 425
+  Constraints.MinWidth = 620
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
   KeyPreview = True
+  OldCreateOrder = True
   Position = poScreenCenter
   OnClose = FormClose
   OnDestroy = FormDestroy
   OnKeyDown = FormKeyDown
+  PixelsPerInch = 96
   TextHeight = 15
   object lblContractorName: TLabel
-    Left = 32
-    Top = 8
+    Left = 116
+    Top = 74
     Width = 175
     Height = 25
     AutoSize = False
@@ -26,8 +30,8 @@ object FormAddContractor: TFormAddContractor
     Layout = tlCenter
   end
   object lblPostCode: TLabel
-    Left = 32
-    Top = 48
+    Left = 116
+    Top = 114
     Width = 175
     Height = 25
     AutoSize = False
@@ -35,8 +39,8 @@ object FormAddContractor: TFormAddContractor
     Layout = tlCenter
   end
   object lblTown: TLabel
-    Left = 32
-    Top = 88
+    Left = 116
+    Top = 154
     Width = 175
     Height = 25
     AutoSize = False
@@ -44,8 +48,8 @@ object FormAddContractor: TFormAddContractor
     Layout = tlCenter
   end
   object lblStreet: TLabel
-    Left = 32
-    Top = 128
+    Left = 116
+    Top = 194
     Width = 175
     Height = 25
     AutoSize = False
@@ -53,8 +57,8 @@ object FormAddContractor: TFormAddContractor
     Layout = tlCenter
   end
   object lblHouseNumber: TLabel
-    Left = 32
-    Top = 168
+    Left = 116
+    Top = 234
     Width = 175
     Height = 25
     AutoSize = False
@@ -62,8 +66,8 @@ object FormAddContractor: TFormAddContractor
     Layout = tlCenter
   end
   object edtContractorName: TEdit
-    Left = 208
-    Top = 10
+    Left = 292
+    Top = 76
     Width = 199
     Height = 25
     AutoSelect = False
@@ -71,8 +75,8 @@ object FormAddContractor: TFormAddContractor
     TabOrder = 0
   end
   object edtPostCode: TEdit
-    Left = 208
-    Top = 50
+    Left = 292
+    Top = 116
     Width = 199
     Height = 25
     AutoSelect = False
@@ -80,8 +84,8 @@ object FormAddContractor: TFormAddContractor
     TabOrder = 1
   end
   object edtTown: TEdit
-    Left = 208
-    Top = 90
+    Left = 292
+    Top = 156
     Width = 199
     Height = 25
     AutoSelect = False
@@ -89,8 +93,8 @@ object FormAddContractor: TFormAddContractor
     TabOrder = 2
   end
   object edtStreet: TEdit
-    Left = 208
-    Top = 130
+    Left = 292
+    Top = 196
     Width = 199
     Height = 25
     AutoSelect = False
@@ -98,8 +102,8 @@ object FormAddContractor: TFormAddContractor
     TabOrder = 3
   end
   object edtHouseNumer: TEdit
-    Left = 208
-    Top = 170
+    Left = 292
+    Top = 236
     Width = 199
     Height = 25
     AutoSelect = False
@@ -109,21 +113,47 @@ object FormAddContractor: TFormAddContractor
     TabOrder = 4
   end
   object btnClose: TButton
-    Left = 208
-    Top = 216
-    Width = 99
+    Left = 142
+    Top = 280
+    Width = 140
     Height = 25
     Action = actClose
     Caption = 'Zamknij'
     TabOrder = 5
   end
   object btnAddContractor: TButton
-    Left = 311
-    Top = 216
-    Width = 96
+    Left = 318
+    Top = 279
+    Width = 140
     Height = 25
     Caption = 'Zapisz'
     TabOrder = 6
+  end
+  object pnlBottomContractor: TPanel
+    Left = 0
+    Top = 384
+    Width = 620
+    Height = 41
+    Align = alBottom
+    Color = clWhite
+    ParentBackground = False
+    TabOrder = 7
+    ExplicitLeft = 49
+    ExplicitTop = 417
+    ExplicitWidth = 185
+  end
+  object pnlTopContractor: TPanel
+    Left = 0
+    Top = 0
+    Width = 620
+    Height = 41
+    Align = alTop
+    Caption = 'Dane nowego kontrahenta'
+    Color = clWhite
+    ParentBackground = False
+    TabOrder = 8
+    ExplicitLeft = 1
+    ExplicitTop = 1
   end
   object actContractor: TActionList
     Left = 856

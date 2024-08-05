@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, System.Actions, Vcl.ActnList,
-  Vcl.StdCtrls;
+  Vcl.StdCtrls, Vcl.ExtCtrls;
 
 type
   TFormAddContractor = class(TForm)
@@ -24,6 +24,8 @@ type
     btnAddContractor: TButton;
     actClose: TAction;
     actAddContractor: TAction;
+    pnlBottomContractor: TPanel;
+    pnlTopContractor: TPanel;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormDestroy(Sender: TObject);
     procedure actCloseExecute(Sender: TObject);

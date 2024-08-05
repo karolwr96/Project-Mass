@@ -5,6 +5,8 @@ object barMain: TbarMain
   ClientHeight = 425
   ClientWidth = 620
   Color = clBtnFace
+  Constraints.MinHeight = 425
+  Constraints.MinWidth = 620
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -12
@@ -15,10 +17,22 @@ object barMain: TbarMain
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 15
+  object pnlBottomMainMenu: TPanel
+    Left = 0
+    Top = 384
+    Width = 620
+    Height = 41
+    Align = alBottom
+    Color = clWhite
+    ParentBackground = False
+    TabOrder = 4
+    ExplicitTop = 385
+    ExplicitWidth = 619
+  end
   object actionListMainMenu: TActionList
-    Images = cxImageList1
-    Left = 26
-    Top = 290
+    Images = imageListMainMenu
+    Left = 71
+    Top = 271
     object actClose: TAction
       Caption = 'actClose'
       OnExecute = actCloseExecute
@@ -32,7 +46,7 @@ object barMain: TbarMain
       OnExecute = actContractorExecute
     end
   end
-  object dxBarManager1: TdxBarManager
+  object barManagerMainMenu: TdxBarManager
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -12
@@ -44,19 +58,19 @@ object barMain: TbarMain
       2)
     Categories.Visibles = (
       True)
-    ImageOptions.Images = cxImageList1
-    ImageOptions.LargeImages = cxImageList1
+    ImageOptions.Images = imageListMainMenu
+    ImageOptions.LargeImages = imageListMainMenu
     PopupMenuLinks = <>
     UseSystemFont = True
-    Left = 35
-    Top = 150
+    Left = 68
+    Top = 144
     PixelsPerInch = 96
     DockControlHeights = (
       0
       0
       46
       0)
-    object dxBarManager1Bar1: TdxBar
+    object pnlTopMainMenu: TdxBar
       AllowCustomizing = False
       AllowQuickCustomizing = False
       AllowReset = False
@@ -70,27 +84,24 @@ object barMain: TbarMain
       FloatTop = 2
       FloatClientWidth = 0
       FloatClientHeight = 0
+      Images = imageListMainMenu
       IsMainMenu = True
       ItemLinks = <
         item
           Visible = True
-          ItemName = 'dxBarLargeButton1'
+          ItemName = 'btnClose'
         end
         item
           Visible = True
-          ItemName = 'dxBarLargeButton2'
+          ItemName = 'btnSettings'
         end
         item
           Visible = True
-          ItemName = 'dxBarLargeButton3'
+          ItemName = 'btnContractor'
         end
         item
           Visible = True
-          ItemName = 'dxBarLargeButton4'
-        end
-        item
-          Visible = True
-          ItemName = 'dxBarLargeButton5'
+          ItemName = 'btnProduct'
         end>
       MultiLine = True
       OneOnRow = True
@@ -99,16 +110,16 @@ object barMain: TbarMain
       Visible = True
       WholeRow = True
     end
-    object dxBarLargeButton1: TdxBarLargeButton
+    object btnClose: TdxBarLargeButton
       Caption = 'Zamknij'
       Category = 0
       Hint = 'Zamknij'
       Visible = ivAlways
       OnClick = actCloseExecute
       SyncImageIndex = False
-      ImageIndex = 3
+      ImageIndex = 0
     end
-    object dxBarLargeButton2: TdxBarLargeButton
+    object btnSettings: TdxBarLargeButton
       Caption = 'Ustawienia'
       Category = 0
       Hint = 'Ustawienia'
@@ -117,19 +128,7 @@ object barMain: TbarMain
       SyncImageIndex = False
       ImageIndex = 3
     end
-    object dxBarButton1: TdxBarButton
-      Caption = 'New Button'
-      Category = 0
-      Hint = 'New Button'
-      Visible = ivAlways
-    end
-    object dxBarButton2: TdxBarButton
-      Caption = 'New Button'
-      Category = 0
-      Hint = 'New Button'
-      Visible = ivAlways
-    end
-    object dxBarLargeButton3: TdxBarLargeButton
+    object btnContractor: TdxBarLargeButton
       Caption = 'Dodaj kontrahenta'
       Category = 0
       Hint = 'Dodaj kontrahenta'
@@ -138,13 +137,7 @@ object barMain: TbarMain
       SyncImageIndex = False
       ImageIndex = 5
     end
-    object dxBarButton3: TdxBarButton
-      Caption = 'Dodaj produkt'
-      Category = 0
-      Hint = 'Dodaj produkt'
-      Visible = ivAlways
-    end
-    object dxBarLargeButton4: TdxBarLargeButton
+    object btnProduct: TdxBarLargeButton
       Caption = 'Dodaj produkt'
       Category = 0
       Hint = 'Dodaj produkt'
@@ -152,17 +145,11 @@ object barMain: TbarMain
       SyncImageIndex = False
       ImageIndex = 4
     end
-    object dxBarLargeButton5: TdxBarLargeButton
-      Caption = 'New Button'
-      Category = 0
-      Hint = 'New Button'
-      Visible = ivAlways
-    end
   end
-  object cxImageList1: TcxImageList
+  object imageListMainMenu: TcxImageList
     SourceDPI = 96
     FormatVersion = 1
-    DesignInfo = 14352414
+    DesignInfo = 13697084
     ImageInfo = <
       item
         ImageClass = 'TdxSmartImage'
