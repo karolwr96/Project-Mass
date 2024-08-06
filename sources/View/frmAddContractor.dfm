@@ -57,8 +57,8 @@ object FormAddContractor: TFormAddContractor
     Layout = tlCenter
   end
   object lblHouseNumber: TLabel
-    Left = 116
-    Top = 234
+    Left = 117
+    Top = 233
     Width = 175
     Height = 25
     AutoSize = False
@@ -113,7 +113,7 @@ object FormAddContractor: TFormAddContractor
     TabOrder = 4
   end
   object btnClose: TButton
-    Left = 142
+    Left = 135
     Top = 280
     Width = 140
     Height = 25
@@ -126,7 +126,8 @@ object FormAddContractor: TFormAddContractor
     Top = 279
     Width = 140
     Height = 25
-    Caption = 'Zapisz'
+    Action = actAddContractor
+    Caption = 'Dodaj kontrahenta'
     TabOrder = 6
   end
   object pnlBottomContractor: TPanel
@@ -138,9 +139,8 @@ object FormAddContractor: TFormAddContractor
     Color = clWhite
     ParentBackground = False
     TabOrder = 7
-    ExplicitLeft = 49
-    ExplicitTop = 417
-    ExplicitWidth = 185
+    ExplicitLeft = 29
+    ExplicitTop = 378
   end
   object pnlTopContractor: TPanel
     Left = 0
@@ -152,8 +152,8 @@ object FormAddContractor: TFormAddContractor
     Color = clWhite
     ParentBackground = False
     TabOrder = 8
-    ExplicitLeft = 1
-    ExplicitTop = 1
+    ExplicitLeft = 15
+    ExplicitTop = 61
   end
   object actContractor: TActionList
     Left = 856
@@ -164,6 +164,7 @@ object FormAddContractor: TFormAddContractor
     end
     object actAddContractor: TAction
       Caption = 'actAddContractor'
+      OnExecute = actAddContractorExecute
     end
   end
 end

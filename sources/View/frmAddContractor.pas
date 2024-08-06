@@ -30,6 +30,7 @@ type
     procedure FormDestroy(Sender: TObject);
     procedure actCloseExecute(Sender: TObject);
     procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure actAddContractorExecute(Sender: TObject);
 
   private
     { Private declarations }
@@ -44,11 +45,32 @@ implementation
 
 {$R *.dfm}
 
+uses cManagerContractor;
+
+
+procedure TFormAddContractor.actAddContractorExecute(Sender: TObject);
+begin
+  //with TManagerContractor.Instance do begin
+    TManagerContractor.Instance.SaveToFile();
+    //ItemSettingsTmp.DbPath := edtDbName.Text;
+    //ItemSettingsTmp.DbServerName := edtDbServer.Text;
+    //ItemSettingsTmp.DbLogin := edtDbUser.Text;
+    //ItemSettingsTmp.DbPass := edtDbPassword.Text;
+    //if SaveToFile() then begin
+     // ItemSettings.AssignValues(ItemSettingsTmp);
+      ModalResult := mrOk;
+    //end else begin
+    //  ShowMessage('B³¹d zapisu');
+   // end;
+
+  //end;
+end;
 
 procedure TFormAddContractor.actCloseExecute(Sender: TObject);
 begin
   Self.Close;
 end;
+
 
 procedure TFormAddContractor.FormClose(Sender: TObject; var Action: TCloseAction);
 begin

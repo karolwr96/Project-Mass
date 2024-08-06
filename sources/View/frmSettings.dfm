@@ -116,7 +116,6 @@ object FormSettings: TFormSettings
     Color = clWhite
     ParentBackground = False
     TabOrder = 6
-    ExplicitTop = 385
   end
   object pnlTopSettings: TPanel
     Left = 0
@@ -128,8 +127,6 @@ object FormSettings: TFormSettings
     Color = clWhite
     ParentBackground = False
     TabOrder = 7
-    ExplicitLeft = 1
-    ExplicitTop = 46
   end
   object actSettings: TActionList
     Left = 32

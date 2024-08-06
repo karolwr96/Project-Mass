@@ -43,7 +43,6 @@ end;
 
 destructor TItemSettings.Destroy;
 begin
-  //
   inherited;
 end;
 

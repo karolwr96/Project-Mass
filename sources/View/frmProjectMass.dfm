@@ -26,8 +26,6 @@ object barMain: TbarMain
     Color = clWhite
     ParentBackground = False
     TabOrder = 4
-    ExplicitTop = 385
-    ExplicitWidth = 619
   end
   object actionListMainMenu: TActionList
     Images = imageListMainMenu

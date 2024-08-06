@@ -1,0 +1,70 @@
+unit cManagerContractor;
+
+interface
+
+uses
+  Classes, cItemContractor;
+
+type
+TManagerContractor = class
+  private
+    FPathToFile : string;
+    FItemContractor : TItemContractor;
+
+    class var FInstance : TManagerContractor;
+    constructor CreateInstance;
+
+  public
+
+    constructor Create(); overload;
+    destructor Destroy(); override;
+
+    class function Instance : TManagerContractor; //Instance odpowiada za przydzielanie pamiêci do przechowywania nowej instancji klasy
+    class procedure ReleaseInstance; //ReleaseInstance jest odpowiedzialne za zwalnianie pamiêci, gdy klasa zostanie zniszczona
+end;
+
+
+implementation
+
+uses
+  SysUtils, uIniXml;
+
+{ TManagerSettings }
+
+constructor TManagerContractor.Create;
+begin
+  inherited Create;
+  raise Exception.CreateFmt('Access class %s through Instance only', [ClassName]);
+end;
+
+constructor TManagerContractor.CreateInstance;
+begin
+  inherited Create;
+  // Zainicjuj/stwórz tutaj prywatne zmienne
+  FItemContractor := TItemContractor.Create;
+  FPathToFile := IncludeTrailingPathDelimiter(ExtractFileDir(ParamStr(0))) + 'Contractors.xml';
+end;
+
+
+destructor TManagerContractor.Destroy;
+begin
+  //Zniszcz tutaj prywatne zmienne
+  FItemContractor.Free;
+
+  inherited;
+end;
+
+class function TManagerSetTManagerContractortings.Instance: TManagerContractor;
+begin
+  //Instance odpowiada za przydzielanie pamiêci do przechowywania nowej instancji klasy
+  if FInstance = Nil then FInstance := TManagerContractor.CreateInstance;
+  Result := FInstance;
+end;
+
+
+class procedure TManagerSetTManagerContractortings.ReleaseInstance;
+begin
+  //ReleaseInstance jest odpowiedzialne za zwalnianie pamiêci, gdy klasa zostanie zniszczona
+  FInstance.Free;
+end;
+end.

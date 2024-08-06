@@ -67,11 +67,11 @@ end;
 
 procedure TbarMain.actContractorExecute(Sender: TObject);
 begin
-if FormAddContractor = nil then
-  begin
-  FormAddContractor := TFormAddContractor.Create(Application);
-  FormAddContractor.ShowModal();
-  end;
+ if FormAddContractor = nil then
+    FormAddContractor := TFormAddContractor.Create(Application);
+    if FormAddContractor.ShowModal = mrOk then begin
+    ShowMessage('Poprawnie dodano kontrahenta!');
+    end;
 end;
 
 procedure TbarMain.actSettingsExecute(Sender: TObject);
@@ -80,7 +80,7 @@ begin
     FormSettings := TFormSettings.Create(Application);
     if FormSettings.ShowModal = mrOk then begin
     ShowMessage('Poprawnie zapisano ustawienia!');
-  end;
+    end;
 end;
 
 
