@@ -119,6 +119,7 @@
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="..\Controller\cManagerContractor.pas"/>
+        <DCCReference Include="..\Model\cItemContractor.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

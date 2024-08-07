@@ -5,16 +5,17 @@ interface
 type
 TItemContractor = class
   private
-    Name              : string;
-    PostCode          : string;
-    Town              : string;
-    Street            : string;
-    HouseNumber       : string;
+    FName              : string;
+    FPostCode          : string;
+    FTown              : string;
+    FStreet            : string;
+    FHouseNumber       : string;
   public
-   // property DbServerName : string read FDbServerName write FDbServerName  ;
-   // property DbLogin      : string read FDbLogin      write FDbLogin       ;
-   // property DbPass       : string read FDbPass       write FDbPass        ;
-   // property DbPath       : string read FDbPath       write FDbPath        ;
+    property Name          : string read FName          write FName         ;
+    property PostCode      : string read FPostCode      write FPostCode     ;
+    property Town          : string read FTown          write FTown         ;
+    property Street        : string read FStreet        write FStreet       ;
+    property HouseNumber   : string read FHouseNumber   write FHouseNumber  ;
 
   //  procedure AssignValues(pSource : TItemSettings);
     procedure SetDefault;
@@ -38,7 +39,6 @@ end;                         }
 constructor TItemContractor.Create;
 begin
   inherited Create;
-
   SetDefault;
 end;
 
@@ -49,11 +49,11 @@ end;
 
 procedure TItemContractor.SetDefault;
 begin
-  Name := '';
-  PostCode      := '';
-  Town      := '';
-  Street      := '';
-  HouseNumber      := '';
+  FName := '';
+  FPostCode      := '';
+  FTown      := '';
+  FStreet      := '';
+  FHouseNumber      := '';
 end;
 
 end.

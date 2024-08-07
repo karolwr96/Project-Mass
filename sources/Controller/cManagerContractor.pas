@@ -7,14 +7,17 @@ uses
 
 type
 TManagerContractor = class
-  private
+ private
     FPathToFile : string;
     FItemContractor : TItemContractor;
+    //TItemContractor : TItemContractor;
 
     class var FInstance : TManagerContractor;
     constructor CreateInstance;
 
   public
+    property ItemContractor : TItemContractor read FItemContractor write FItemContractor;
+
     function SaveToFile: Boolean;
     constructor Create(); overload;
     destructor Destroy(); override;
@@ -75,20 +78,21 @@ begin
 
   //zapis do pliku
   iniTmp := TIniXml.Create(FPathToFile);
- { Try
+  Try
     Try
-      iniTmp.WriteParam('BD/BD_SERVER', FItemSettingsTmp.DbServerName);
-      iniTmp.WriteParam('BD/BD_LOGIN', FItemSettingsTmp.DbLogin);
-      iniTmp.WriteParam('BD/BD_PASS', FItemSettingsTmp.DbPass);
-      iniTmp.WriteParam('BD/BD_PATH', FItemSettingsTmp.DbPath);
+      iniTmp.WriteParam('CONTRACTOR/C_NAME', FItemContractor.Name);
+      iniTmp.WriteParam('CONTRACTOR/C_POST_CODE', FItemContractor.PostCode);
+      iniTmp.WriteParam('CONTRACTOR/C_TOWN', FItemContractor.Town);
+      iniTmp.WriteParam('CONTRACTOR/C_STREET', FItemContractor.Street);
+      iniTmp.WriteParam('CONTRACTOR/C_HOUSE_NUMBER', FItemContractor.HouseNumber);
       Result := True;
     Except
       //powinno byæ obs³u¿one
     End;
-  Finally    }
+  Finally
     iniTmp.Free;
- // End;
+    Result := True;
+  End;
 end;
-
 
 end.

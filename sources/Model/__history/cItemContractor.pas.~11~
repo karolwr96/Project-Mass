@@ -1,0 +1,60 @@
+unit cItemContractor;
+
+interface
+
+type
+TItemContractor = class
+  private
+    FName              : string;
+    FPostCode          : string;
+    FTown              : string;
+    FStreet            : string;
+    FHouseNumber       : string;
+  public
+    property Name  : string read Name  write Name   ;
+    property PostCode        : string read PostCode        write PostCode         ;
+    property Town          : string read Town          write Town           ;
+    property Street        : string read Street        write Street         ;
+    property HouseNumber         : string read HouseNumber         write HouseNumber          ;
+
+  //  procedure AssignValues(pSource : TItemSettings);
+    procedure SetDefault;
+
+    constructor Create(); overload;
+    destructor Destroy; override;
+end;
+
+implementation
+
+{ TItemContractor }
+      {
+procedure TItemSettings.AssignValues(pSource: TItemSettings);
+begin
+  FDbServerName := pSource.DbServerName;
+  FDbLogin      := pSource.DbLogin;
+  FDbPass       := pSource.DbPass;
+  FDbPath       := pSource.DbPath;
+end;                         }
+
+constructor TItemContractor.Create;
+begin
+  inherited Create;
+
+  SetDefault;
+end;
+
+destructor TItemContractor.Destroy;
+begin
+  inherited;
+end;
+
+procedure TItemContractor.SetDefault;
+begin
+  FName := '';
+  FPostCode      := '';
+  FTown      := '';
+  FStreet      := '';
+  FHouseNumber      := '';
+end;
+
+end.

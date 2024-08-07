@@ -9,7 +9,8 @@ uses
   uEncryptStr in '..\Helper\uEncryptStr.pas',
   cItemSettings in '..\Model\cItemSettings.pas',
   frmAddContractor in '..\View\frmAddContractor.pas' {FormAddContractor},
-  cManagerContractor in '..\Controller\cManagerContractor.pas';
+  cManagerContractor in '..\Controller\cManagerContractor.pas',
+  cItemContractor in '..\Model\cItemContractor.pas';
 
 {$R *.res}
 

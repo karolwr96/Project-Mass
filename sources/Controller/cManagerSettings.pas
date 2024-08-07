@@ -54,7 +54,6 @@ destructor TManagerSettings.Destroy;
 begin
   //Zniszcz tutaj prywatne zmienne
   FItemSettings.Free;
-  FItemSettingsTmp.Free;
 
   inherited;
 end;

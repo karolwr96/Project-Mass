@@ -84,8 +84,8 @@ object FormAddContractor: TFormAddContractor
     TabOrder = 1
   end
   object edtTown: TEdit
-    Left = 292
-    Top = 156
+    Left = 293
+    Top = 157
     Width = 199
     Height = 25
     AutoSelect = False
@@ -139,8 +139,6 @@ object FormAddContractor: TFormAddContractor
     Color = clWhite
     ParentBackground = False
     TabOrder = 7
-    ExplicitLeft = 29
-    ExplicitTop = 378
   end
   object pnlTopContractor: TPanel
     Left = 0
@@ -152,8 +150,6 @@ object FormAddContractor: TFormAddContractor
     Color = clWhite
     ParentBackground = False
     TabOrder = 8
-    ExplicitLeft = 15
-    ExplicitTop = 61
   end
   object actContractor: TActionList
     Left = 856

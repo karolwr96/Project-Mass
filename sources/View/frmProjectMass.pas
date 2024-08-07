@@ -72,6 +72,8 @@ begin
     if FormAddContractor.ShowModal = mrOk then begin
     ShowMessage('Poprawnie dodano kontrahenta!');
     end;
+
+    //ponowne otwarcia okna dodaj kontrahenta gdy dane zostan¹ dodane do pliku xml ???
 end;
 
 procedure TbarMain.actSettingsExecute(Sender: TObject);

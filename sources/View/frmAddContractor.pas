@@ -50,20 +50,19 @@ uses cManagerContractor;
 
 procedure TFormAddContractor.actAddContractorExecute(Sender: TObject);
 begin
-  //with TManagerContractor.Instance do begin
-    TManagerContractor.Instance.SaveToFile();
-    //ItemSettingsTmp.DbPath := edtDbName.Text;
-    //ItemSettingsTmp.DbServerName := edtDbServer.Text;
-    //ItemSettingsTmp.DbLogin := edtDbUser.Text;
-    //ItemSettingsTmp.DbPass := edtDbPassword.Text;
-    //if SaveToFile() then begin
+  with TManagerContractor.Instance do begin
+    ItemContractor.Name := edtContractorName.Text;
+    ItemContractor.PostCode := edtPostCode.Text;
+    ItemContractor.Town := edtTown.Text;
+    ItemContractor.Street := edtStreet.Text;
+    ItemContractor.HouseNumber := edtHouseNumer.Text;
+    if SaveToFile() then begin
      // ItemSettings.AssignValues(ItemSettingsTmp);
       ModalResult := mrOk;
-    //end else begin
-    //  ShowMessage('B³¹d zapisu');
-   // end;
-
-  //end;
+    end else begin
+      ShowMessage('B³¹d zapisu');
+    end;
+  end;
 end;
 
 procedure TFormAddContractor.actCloseExecute(Sender: TObject);
