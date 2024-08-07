@@ -69,10 +69,12 @@ procedure TbarMain.actContractorExecute(Sender: TObject);
 begin
  if FormAddContractor = nil then
     FormAddContractor := TFormAddContractor.Create(Application);
-    if FormAddContractor.ShowModal = mrOk then begin
-    ShowMessage('Poprawnie dodano kontrahenta!');
-    end;
+    FormAddContractor.ShowModal;
+    //if FormAddContractor.ShowModal = mrOk then begin
+   // ShowMessage('Poprawnie dodano kontrahenta!');
+   // end;
 
+    //pokazanie wiadomoœci o dodaniu kontrahenta przeniesione do frmAddContractor
     //ponowne otwarcia okna dodaj kontrahenta gdy dane zostan¹ dodane do pliku xml ???
 end;
 

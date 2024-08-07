@@ -31,11 +31,17 @@ type
     procedure actCloseExecute(Sender: TObject);
     procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure actAddContractorExecute(Sender: TObject);
+   // procedure SetDefault();
+
 
   private
+    procedure clearInputFields();
     { Private declarations }
+
+
   public
     { Public declarations }
+
   end;
 
 var
@@ -57,12 +63,24 @@ begin
     ItemContractor.Street := edtStreet.Text;
     ItemContractor.HouseNumber := edtHouseNumer.Text;
     if SaveToFile() then begin
+      ShowMessage('Pomyslnie dodano kontrahenta');
+      ItemContractor.SetDefault();
+      self.clearInputFields();
      // ItemSettings.AssignValues(ItemSettingsTmp);
-      ModalResult := mrOk;
+     // ModalResult := mrOk;
     end else begin
       ShowMessage('B³¹d zapisu');
     end;
   end;
+end;
+
+procedure TFormAddContractor.clearInputFields();
+begin
+  edtContractorName.clear;
+  edtPostCode.clear;
+  edtTown.clear;
+  edtStreet.clear;
+  edtHouseNumer.clear;
 end;
 
 procedure TFormAddContractor.actCloseExecute(Sender: TObject);
