@@ -76,8 +76,8 @@ object FormSettings: TFormSettings
     TabOrder = 1
   end
   object edtDbUser: TEdit
-    Left = 307
-    Top = 142
+    Left = 308
+    Top = 144
     Width = 199
     Height = 23
     TabOrder = 2

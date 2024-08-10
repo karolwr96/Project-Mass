@@ -14,6 +14,7 @@ uses
 
       function GiveMeNode(ANode : string) : IXMLNode;
       procedure Split(pDelimiter: Char; pInput: string; pStrings: TStrings);
+
     public
       property NodeDelimiter : Char read FNodeDelimiter;
       function DeleteNodeParent(AParent, ANode : string) : Boolean;
@@ -29,7 +30,7 @@ uses
       function ReadParamBytes(ANode : string) : TBytes;
       function ReadListStr(ANode : string; var AList: TStringList): Boolean;
       function WriteListStr(ANode, AParent, AChildName: string; AList: TStringList) : Boolean;
-      constructor Create(AFileName : string); overload;
+      constructor Create(AFileName, ADataTypeStart, ADataTypeEnd : string); overload;
       destructor Destroy; override;
   end;
 implementation
@@ -39,7 +40,7 @@ uses
 
 { TIniXml }
 
-constructor TIniXml.Create(AFileName: string);
+constructor TIniXml.Create(AFileName, ADataTypeStart, ADataTypeEnd: string);
 var StrListTmp : TStringList;
 begin
   inherited Create;
@@ -53,8 +54,8 @@ begin
       StrListTmp := TStringList.Create;
       with StrListTmp do begin
         Add('<?xml version="1.0" encoding="UTF-8"?>');
-        Add('<CONFIGURATION>');
-        Add('</CONFIGURATION>');
+        Add(ADataTypeStart);
+        Add(ADataTypeEnd);
         SaveToFile(FFileName);
       end;
     Except

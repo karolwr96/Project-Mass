@@ -70,7 +70,7 @@ procedure TManagerSettings.ReadFromFile;
 var iniTmp : TIniXml;
 begin
   //zapis do pliku
-  iniTmp := TIniXml.Create(FPathToFile);
+  iniTmp := TIniXml.Create(FPathToFile, '<CONFIGURATION>', '</CONFIGURATION>');
   Try
     Try
       FItemSettings.DbServerName := iniTmp.ReadParamStr('BD/BD_SERVER');
@@ -98,7 +98,7 @@ begin
   Result := False;
 
   //zapis do pliku
-  iniTmp := TIniXml.Create(FPathToFile);
+  iniTmp := TIniXml.Create(FPathToFile, '<CONFIGURATION>', '</CONFIGURATION>');
   Try
     Try
       iniTmp.WriteParam('BD/BD_SERVER', FItemSettingsTmp.DbServerName);

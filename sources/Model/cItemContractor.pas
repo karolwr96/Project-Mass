@@ -10,6 +10,7 @@ TItemContractor = class
     FTown              : string;
     FStreet            : string;
     FHouseNumber       : string;
+
   public
     property Name          : string read FName          write FName         ;
     property PostCode      : string read FPostCode      write FPostCode     ;

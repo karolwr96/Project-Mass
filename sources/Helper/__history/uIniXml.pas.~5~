@@ -1,0 +1,332 @@
+unit uIniXml;
+
+interface
+
+uses
+  XMLDoc, XMLIntf, Contnrs, Generics.Collections, Classes, SysUtils;
+
+  type TIniXml = class
+    private
+      FFileName : string;
+      FXmlDocument : IXmlDocument;
+      FError : Boolean;  //znacznik do bledow odczytu i zapisu
+      FNodeDelimiter : Char;
+
+      function GiveMeNode(ANode : string) : IXMLNode;
+      procedure Split(pDelimiter: Char; pInput: string; pStrings: TStrings);
+
+    public
+      property NodeDelimiter : Char read FNodeDelimiter;
+      function DeleteNodeParent(AParent, ANode : string) : Boolean;
+      function WriteParam(ANode, AValue : string) : Boolean; overload;
+      function WriteParam(ANode : string; AValue : Integer) : Boolean; overload;
+      function WriteParam(ANode : string; AValue : Double) : Boolean; overload;
+      function WriteParam(ANode : string; AValue : Boolean) : Boolean; overload;
+      function WriteParam(ANode : string; AValue : TBytes) : Boolean; overload;
+      function ReadParamStr(ANode : string) : string;
+      function ReadParamInt(ANode : string) : Integer;
+      function ReadParamFloat(ANode : string) : Double;
+      function ReadParamBool(ANode : string) : Boolean;
+      function ReadParamBytes(ANode : string) : TBytes;
+      function ReadListStr(ANode : string; var AList: TStringList): Boolean;
+      function WriteListStr(ANode, AParent, AChildName: string; AList: TStringList) : Boolean;
+      constructor Create(AFileName : string); overload;
+      destructor Destroy; override;
+  end;
+implementation
+
+uses
+  Windows, Generics.Defaults, EncdDecd;
+
+{ TIniXml }
+
+constructor TIniXml.Create(AFileName: string);
+var StrListTmp : TStringList;
+begin
+  inherited Create;
+  FXmlDocument := Nil;
+  FError := True;
+  FNodeDelimiter := '/';
+  FFileName := Trim(AFileName);
+  //stworzenie pliku jezeli nie istnieje
+  if not FileExists(FFileName) then begin
+    Try
+      StrListTmp := TStringList.Create;
+      with StrListTmp do begin
+        Add('<?xml version="1.0" encoding="UTF-8"?>');
+        Add('<CONFIGURATION>');
+        Add('</CONFIGURATION>');
+        SaveToFile(FFileName);
+      end;
+    Except
+      Exit;
+    End;
+  end;
+  //utworzenie kompnentu do obslugi xml'a
+  FXmlDocument := LoadXMLDocument(FFileName);
+  with FXmlDocument do begin
+    Options := [doNodeAutoCreate, doNodeAutoIndent, doAttrNull, doAutoPrefix,
+                doNamespaceDecl, doAutoSave];
+    ParseOptions := [poPreserveWhiteSpace];
+    Active := True;
+  end;
+  FError := False;
+end;
+
+function TIniXml.DeleteNodeParent(AParent, ANode: string): Boolean;
+var NodeParent, NodeChild : IXMLNode;
+begin
+  Result := False;
+  if FXmlDocument = Nil then Exit;
+  //szukamy parenta
+  if AParent <> '' then begin
+    NodeParent := FXmlDocument.DocumentElement.ChildNodes.FindNode(AParent);
+  end else begin
+    NodeParent := FXmlDocument.DocumentElement;
+  end;
+  if NodeParent = Nil then Exit;
+  //szukamy dziecko
+  NodeChild := NodeParent.ChildNodes.FindNode(ANode);
+  if NodeChild <> Nil then begin
+    //NodeChild.ChildNodes.Clear;
+    NodeParent.ChildNodes.Remove(NodeChild);
+    Result := True;
+  end;
+end;
+
+destructor TIniXml.Destroy;
+begin
+  FXmlDocument.Active := False;
+  inherited;
+end;
+
+function TIniXml.GiveMeNode(ANode: string): IXMLNode;
+var NodeParent, NodeChild : IXMLNode;
+    strList : TStringList;
+    I : Integer;
+begin
+  Result := Nil;
+  FError := True;
+  if FXmlDocument = Nil then Exit;
+  NodeParent := FXmlDocument.DocumentElement;
+  if Trim(ANode) <> '' then begin
+    strList := TStringList.Create;
+    Try
+      Self.Split(FNodeDelimiter, ANode, strList);
+      for I := 0 to strList.Count - 1 do begin
+        NodeChild := NodeParent.ChildNodes.FindNode(Trim(strList[I]));
+        if NodeChild = Nil then NodeChild := NodeParent.AddChild(Trim(strList[I]));
+        if NodeChild <> Nil then NodeParent := NodeChild;
+      end;
+    Finally
+      strList.Free;
+    End;
+  end;
+  Result := NodeParent;
+  FError := False;
+end;
+
+function TIniXml.ReadParamStr(ANode : string): string;
+var NodeTmp : IXMLNode;
+begin
+  Result := '';
+  if FXmlDocument = Nil then Exit;
+  if not FError then begin
+    NodeTmp := GiveMeNode(ANode);
+    if NodeTmp = Nil then Exit;
+    if NodeTmp.IsTextElement then begin
+      Result := Trim(NodeTmp.Text);
+    end;
+  end;
+end;
+
+procedure TIniXml.Split(pDelimiter: Char; pInput: string; pStrings: TStrings);
+begin
+  Assert(Assigned(pStrings));
+  pStrings.Clear;
+  pStrings.Delimiter := pDelimiter;
+  pStrings.DelimitedText := pInput;
+end;
+
+function TIniXml.WriteListStr(ANode, AParent, AChildName: string; AList: TStringList) : Boolean;
+var I: Integer;
+    NodeTmp : IXMLNode;
+begin
+  Result := False;
+  if FXmlDocument = Nil then Exit;
+  DeleteNodeParent(AParent, ANode);
+  NodeTmp := GiveMeNode(ANode);
+  if NodeTmp = Nil then Exit;
+  for I := 0 to AList.Count - 1 do begin
+    NodeTmp.AddChild(AChildName).Text := AList[I];
+  end;
+  Result := True;
+end;
+
+function TIniXml.WriteParam(ANode: string; AValue: TBytes): Boolean;
+var NodeTmp : IXMLNode;
+begin
+  Result := False;
+  if FXmlDocument = Nil then Exit;
+  if not FError then begin
+    NodeTmp := GiveMeNode(ANode);
+    if NodeTmp = Nil then Exit;
+    Try
+      NodeTmp.Text := EncodeBase64(AValue, Length(AValue));
+    Except
+      NodeTmp.Text := '';
+    End;
+    Result := True;
+  end;
+end;
+
+function TIniXml.WriteParam(ANode: string; AValue: Boolean): Boolean;
+var NodeTmp : IXMLNode;
+begin
+  Result := False;
+  if FXmlDocument = Nil then Exit;
+  if not FError then begin
+    NodeTmp := GiveMeNode(ANode);
+    if NodeTmp = Nil then Exit;
+    if AValue then NodeTmp.Text := IntToStr(1)
+              else NodeTmp.Text := IntToStr(0);
+    Result := True;
+  end;
+end;
+
+function TIniXml.ReadParamInt(ANode : string): Integer;
+var NodeTmp : IXMLNode;
+begin
+  Result := 0;
+  if FXmlDocument = Nil then Exit;
+  if not FError then begin
+    NodeTmp := GiveMeNode(ANode);
+    if NodeTmp = Nil then Exit;
+    if NodeTmp.IsTextElement then begin
+      Try
+        Result := StrToInt(NodeTmp.Text);
+      Except
+        //
+      End;
+    end;
+  end;
+end;
+
+function TIniXml.ReadListStr(ANode : string;
+  var AList: TStringList): Boolean;
+var NodeTmp : IXMLNode;
+    I : Integer;
+begin
+  Result := False;
+  AList.Clear;
+  if FXmlDocument = Nil then Exit;
+  if not FError then begin
+    NodeTmp := GiveMeNode(ANode);
+    if NodeTmp = Nil then Exit;
+    for I := 0 to NodeTmp.ChildNodes.Count - 1 do begin
+      AList.Add(Trim(NodeTmp.ChildNodes[I].NodeName));
+//      if NodeTmp.ChildNodes[I].IsTextElement then begin
+//        AList.Add(Trim(NodeTmp.ChildNodes[I].Text));
+//      end;
+    end;
+    Result := True;
+  end;
+end;
+
+function TIniXml.ReadParamBool(ANode : string): Boolean;
+var NodeTmp : IXMLNode;
+begin
+  Result := False;
+  if FXmlDocument = Nil then Exit;
+  if not FError then begin
+    NodeTmp := GiveMeNode(ANode);
+    if NodeTmp = Nil then Exit;
+    if NodeTmp.IsTextElement then begin
+      Try
+        if StrToInt(NodeTmp.Text) > 0 then Result := True;
+      Except
+        //
+      End;
+    end;
+  end;
+
+end;
+
+function TIniXml.ReadParamBytes(ANode: string): TBytes;
+var NodeTmp : IXMLNode;
+begin
+  SetLength(Result, 0);
+  if FXmlDocument = Nil then Exit;
+  if not FError then begin
+    NodeTmp := GiveMeNode(ANode);
+    if NodeTmp = Nil then Exit;
+    if NodeTmp.IsTextElement then begin
+      Try
+        Result := DecodeBase64(NodeTmp.Text);
+      Except
+        //
+      End;
+    end;
+  end;
+end;
+
+function TIniXml.ReadParamFloat(ANode : string): Double;
+var NodeTmp : IXMLNode;
+begin
+  Result := 0;
+  if FXmlDocument = Nil then Exit;
+  if not FError then begin
+    NodeTmp := GiveMeNode(ANode);
+    if NodeTmp = Nil then Exit;
+    if NodeTmp.IsTextElement then begin
+      Try
+        Result := StrToFloat(NodeTmp.Text);
+      Except
+        //
+      End;
+    end;
+  end;
+end;
+
+function TIniXml.WriteParam(ANode: string; AValue: Integer): Boolean;
+var NodeTmp : IXMLNode;
+begin
+  Result := False;
+  if FXmlDocument = Nil then Exit;
+  if not FError then begin
+    NodeTmp := GiveMeNode(ANode);
+    if NodeTmp = Nil then Exit;
+    NodeTmp.Text := IntToStr(AValue);
+    Result := True;
+  end;
+end;
+
+function TIniXml.WriteParam(ANode: string; AValue: Double): Boolean;
+var NodeTmp : IXMLNode;
+begin
+  Result := False;
+  if FXmlDocument = Nil then Exit;
+  if not FError then begin
+    NodeTmp := GiveMeNode(ANode);
+    if NodeTmp <> Nil then begin
+      NodeTmp.Text := FloatToStr(AValue);
+      Result := True;
+    end;
+  end;
+end;
+
+function TIniXml.WriteParam(ANode, AValue : string): Boolean;
+var NodeTmp : IXMLNode;
+begin
+  Result := False;
+  if FXmlDocument = Nil then Exit;
+  if not FError then begin
+    NodeTmp := GiveMeNode(ANode);
+    if NodeTmp <> Nil then begin
+      NodeTmp.Text := AValue;
+      Result := True;
+    end;
+  end;
+end;
+
+end.

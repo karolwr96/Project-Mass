@@ -11,6 +11,7 @@ TManagerContractor = class
     FPathToFile : string;
     FItemContractor : TItemContractor;
     //TItemContractor : TItemContractor;
+    //lista testowa
 
     class var FInstance : TManagerContractor;
     constructor CreateInstance;
@@ -73,18 +74,29 @@ end;
 
 function TManagerContractor.SaveToFile: Boolean;
 var iniTmp : TIniXml;
+    postCodeInXML : string;
+    townNameInXML : string;
+    streetInXML : string;
+    houseNumberInXML : string;
+
 begin
   Result := False;
 
   //zapis do pliku
-  iniTmp := TIniXml.Create(FPathToFile);
+  iniTmp := TIniXml.Create(FPathToFile, '<CONTRACTORS>', '</CONTRACTORS>');
+
+  postCodeInXML :=  concat(FItemContractor.Name, '/POST_CODE');
+  townNameInXML :=  concat(FItemContractor.Name, '/TOWN');
+  streetInXML :=  concat(FItemContractor.Name, '/STREET');
+  houseNumberInXML :=  concat(FItemContractor.Name, '/HOUSE_NUMBER');
+
   Try
     Try
-      iniTmp.WriteParam('CONTRACTOR/C_NAME', FItemContractor.Name);
-      iniTmp.WriteParam('CONTRACTOR/C_POST_CODE', FItemContractor.PostCode);
-      iniTmp.WriteParam('CONTRACTOR/C_TOWN', FItemContractor.Town);
-      iniTmp.WriteParam('CONTRACTOR/C_STREET', FItemContractor.Street);
-      iniTmp.WriteParam('CONTRACTOR/C_HOUSE_NUMBER', FItemContractor.HouseNumber);
+      iniTmp.WriteParam(postCodeInXML, FItemContractor.PostCode);
+      iniTmp.WriteParam(townNameInXML, FItemContractor.Town);
+      iniTmp.WriteParam(streetInXML, FItemContractor.Street);
+      iniTmp.WriteParam(houseNumberInXML, FItemContractor.HouseNumber);
+
       Result := True;
     Except
       //powinno byæ obs³u¿one
