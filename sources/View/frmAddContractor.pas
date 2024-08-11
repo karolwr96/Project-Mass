@@ -36,6 +36,7 @@ type
 
   private
     procedure clearInputFields();
+    function areFieldsFilled() : Boolean;
     { Private declarations }
 
 
@@ -56,22 +57,39 @@ uses cManagerContractor;
 
 procedure TFormAddContractor.actAddContractorExecute(Sender: TObject);
 begin
-  with TManagerContractor.Instance do begin
+  if (self.areFieldsFilled()) then begin
+    with TManagerContractor.Instance do begin
     ItemContractor.Name := edtContractorName.Text;
     ItemContractor.PostCode := edtPostCode.Text;
     ItemContractor.Town := edtTown.Text;
     ItemContractor.Street := edtStreet.Text;
     ItemContractor.HouseNumber := edtHouseNumer.Text;
-    if SaveToFile() then begin
-      ShowMessage('Pomyslnie dodano kontrahenta');
-      ItemContractor.SetDefault();
-      self.clearInputFields();
-     // ItemSettings.AssignValues(ItemSettingsTmp);
-     // ModalResult := mrOk;
-    end else begin
+      if SaveToFile() then begin
+        ShowMessage('Pomyslnie dodano kontrahenta');
+        ItemContractor.SetDefault();
+        self.clearInputFields();
+      end else begin
       ShowMessage('B³¹d zapisu');
+      end;
     end;
-  end;
+  end
+  else begin
+  ShowMessage('Uzupe³nij dane kontrahenta');
+  exit;
+  end
+end;
+
+function TFormAddContractor.areFieldsFilled(): Boolean;
+begin
+  Result := true;
+  if (String.IsNullOrEmpty(Trim(edtContractorName.Text)) or
+      String.IsNullOrEmpty(Trim(edtPostCode.Text)) or
+      String.IsNullOrEmpty(Trim(edtTown.Text)) or
+      String.IsNullOrEmpty(Trim(edtStreet.Text)) or
+      String.IsNullOrEmpty(Trim(edtHouseNumer.Text))) then
+    begin
+      Result := false;
+    end;
 end;
 
 procedure TFormAddContractor.clearInputFields();

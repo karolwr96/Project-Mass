@@ -41,6 +41,8 @@ uses
 { TIniXml }
 
 constructor TIniXml.Create(AFileName, ADataTypeStart, ADataTypeEnd: string);
+
+//dodano parametry do wpisania rodzaju typu danych w xml, np configuration
 var StrListTmp : TStringList;
 begin
   inherited Create;

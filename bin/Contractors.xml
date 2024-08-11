@@ -1,9 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<CONTRACTOR>
-  <test>
-    <POST_CODE>1</POST_CODE>
-    <TOWN>2</TOWN>
-    <STREET>3</STREET>
-    <HOUSE_NUMBER>4</HOUSE_NUMBER>
-  </test>
-</CONTRACTOR>
+<CONTRACTORS>
+	<test>
+		<POST_CODE>1</POST_CODE>
+		<TOWN>2</TOWN>
+		<STREET>3</STREET>
+		<HOUSE_NUMBER>4</HOUSE_NUMBER>
+	</test>
+	<yy>
+		<POST_CODE>y</POST_CODE>
+		<TOWN>y</TOWN>
+		<STREET>y</STREET>
+		<HOUSE_NUMBER>y</HOUSE_NUMBER>
+	</yy>
+	<ttt>
+		<POST_CODE>ttt</POST_CODE>
+		<TOWN></TOWN>
+		<STREET></STREET>
+		<HOUSE_NUMBER></HOUSE_NUMBER>
+	</ttt>
+	<t>
+		<POST_CODE>e</POST_CODE>
+		<TOWN>s</TOWN>
+		<STREET>t</STREET>
+		<HOUSE_NUMBER>q</HOUSE_NUMBER>
+	</t>
+	<tt>
+		<POST_CODE>tt</POST_CODE>
+		<TOWN>tt</TOWN>
+		<STREET>tt</STREET>
+		<HOUSE_NUMBER>tt</HOUSE_NUMBER>
+	</tt>
+	<ttttt>
+		<POST_CODE> ttt</POST_CODE>
+		<TOWN>    ttt</TOWN>
+		<STREET>   tttt</STREET>
+		<HOUSE_NUMBER>   tt</HOUSE_NUMBER>
+	</ttttt>  <rr>
+    <POST_CODE>          yyy</POST_CODE>
+    <TOWN>t </TOWN>
+    <STREET>t</STREET>
+    <HOUSE_NUMBER>  t</HOUSE_NUMBER>
+  </rr>
+</CONTRACTORS>

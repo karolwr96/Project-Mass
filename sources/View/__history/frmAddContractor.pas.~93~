@@ -1,0 +1,128 @@
+unit frmAddContractor;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, System.Actions, Vcl.ActnList,
+  Vcl.StdCtrls, Vcl.ExtCtrls;
+
+type
+  TFormAddContractor = class(TForm)
+    actContractor: TActionList;
+    lblContractorName: TLabel;
+    lblPostCode: TLabel;
+    lblTown: TLabel;
+    lblStreet: TLabel;
+    lblHouseNumber: TLabel;
+    edtContractorName: TEdit;
+    edtPostCode: TEdit;
+    edtTown: TEdit;
+    edtStreet: TEdit;
+    edtHouseNumer: TEdit;
+    btnClose: TButton;
+    btnAddContractor: TButton;
+    actClose: TAction;
+    actAddContractor: TAction;
+    pnlBottomContractor: TPanel;
+    pnlTopContractor: TPanel;
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure FormDestroy(Sender: TObject);
+    procedure actCloseExecute(Sender: TObject);
+    procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure actAddContractorExecute(Sender: TObject);
+   // procedure SetDefault();
+
+
+  private
+    procedure clearInputFields();
+    function areFieldsFilled() : Boolean;
+    { Private declarations }
+
+
+  public
+    { Public declarations }
+
+  end;
+
+var
+  FormAddContractor: TFormAddContractor;
+
+implementation
+
+{$R *.dfm}
+
+uses cManagerContractor;
+
+
+procedure TFormAddContractor.actAddContractorExecute(Sender: TObject);
+begin
+  if (self.areFieldsFilled()) then begin
+    with TManagerContractor.Instance do begin
+    ItemContractor.Name := edtContractorName.Text;
+    ItemContractor.PostCode := edtPostCode.Text;
+    ItemContractor.Town := edtTown.Text;
+    ItemContractor.Street := edtStreet.Text;
+    ItemContractor.HouseNumber := edtHouseNumer.Text;
+      if SaveToFile() then begin
+        ShowMessage('Pomyslnie dodano kontrahenta');
+        ItemContractor.SetDefault();
+        self.clearInputFields();
+       // ItemSettings.AssignValues(ItemSettingsTmp);
+       // ModalResult := mrOk;
+      end else begin
+      ShowMessage('B³¹d zapisu');
+      end;
+    end;
+  end
+  else begin
+  ShowMessage('Uzupe³nij dane kontrahenta');
+  exit;
+  end
+end;
+
+function TFormAddContractor.areFieldsFilled(): Boolean;
+begin
+  Result := true;
+  if (String.IsNullOrEmpty(edtContractorName.Text) or
+      String.IsNullOrEmpty(edtPostCode.Text) or
+      String.IsNullOrEmpty(edtTown.Text) or
+      String.IsNullOrEmpty(edtStreet.Text) or
+      String.IsNullOrEmpty(edtHouseNumer.Text)) then
+    begin
+      Result := false;
+    end;
+end;
+
+procedure TFormAddContractor.clearInputFields();
+begin
+  edtContractorName.clear;
+  edtPostCode.clear;
+  edtTown.clear;
+  edtStreet.clear;
+  edtHouseNumer.clear;
+end;
+
+procedure TFormAddContractor.actCloseExecute(Sender: TObject);
+begin
+  Self.Close;
+end;
+
+
+procedure TFormAddContractor.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  Action := caFree;
+end;
+
+procedure TFormAddContractor.FormDestroy(Sender: TObject);
+begin
+  FormAddContractor := nil;
+end;
+
+procedure TFormAddContractor.FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+begin
+  if Key = VK_ESCAPE then
+    Self.Close;
+end;
+
+end.
