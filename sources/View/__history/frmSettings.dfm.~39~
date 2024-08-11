@@ -72,14 +72,14 @@ object FormSettings: TFormSettings
     Left = 308
     Top = 103
     Width = 199
-    Height = 25
+    Height = 23
     TabOrder = 1
   end
   object edtDbUser: TEdit
     Left = 308
     Top = 144
     Width = 199
-    Height = 25
+    Height = 23
     TabOrder = 2
   end
   object edtDbPassword: TEdit
@@ -87,14 +87,13 @@ object FormSettings: TFormSettings
     Top = 181
     Width = 199
     Height = 23
-    PasswordChar = '*'
     TabOrder = 3
   end
   object btnSaveSettings: TButton
     Left = 331
     Top = 225
     Width = 140
-    Height = 30
+    Height = 25
     Action = actSaveSettings
     Caption = 'Zapisz'
     TabOrder = 4
@@ -103,7 +102,7 @@ object FormSettings: TFormSettings
     Left = 146
     Top = 226
     Width = 140
-    Height = 30
+    Height = 25
     Action = actCloseSettings
     Caption = 'Zamknij'
     TabOrder = 5
@@ -129,6 +128,14 @@ object FormSettings: TFormSettings
     ParentBackground = False
     TabOrder = 7
   end
+  object btnCreateDB: TButton
+    Left = 419
+    Top = 309
+    Width = 75
+    Height = 25
+    Action = actAddDB
+    TabOrder = 8
+  end
   object actSettings: TActionList
     Left = 32
     Top = 272
@@ -140,5 +147,24 @@ object FormSettings: TFormSettings
       Caption = 'actSaveSettings'
       OnExecute = actSaveSettingsExecute
     end
+    object actAddDB: TAction
+      Caption = 'actAddDB'
+    end
+  end
+  object FDManager1: TFDManager
+    FormatOptions.AssignedValues = [fvMapRules]
+    FormatOptions.OwnMapRules = True
+    FormatOptions.MapRules = <>
+    Active = True
+    Left = 176
+    Top = 301
+  end
+  object FDConnection1: TFDConnection
+    Left = 245
+    Top = 303
+  end
+  object FDLocalSQL1: TFDLocalSQL
+    Left = 312
+    Top = 301
   end
 end

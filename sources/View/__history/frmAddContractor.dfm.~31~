@@ -84,8 +84,8 @@ object FormAddContractor: TFormAddContractor
     TabOrder = 1
   end
   object edtTown: TEdit
-    Left = 292
-    Top = 156
+    Left = 293
+    Top = 157
     Width = 199
     Height = 25
     AutoSelect = False
@@ -126,7 +126,8 @@ object FormAddContractor: TFormAddContractor
     Top = 279
     Width = 140
     Height = 25
-    Caption = 'Zapisz'
+    Action = actAddContractor
+    Caption = 'Dodaj kontrahenta'
     TabOrder = 6
   end
   object pnlBottomContractor: TPanel
@@ -159,6 +160,7 @@ object FormAddContractor: TFormAddContractor
     end
     object actAddContractor: TAction
       Caption = 'actAddContractor'
+      OnExecute = actAddContractorExecute
     end
   end
 end

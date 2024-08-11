@@ -22,7 +22,11 @@ uses
   dxSkinsDefaultPainters, dxSkinValentine, dxSkinVisualStudio2013Blue,
   dxSkinVisualStudio2013Dark, dxSkinVisualStudio2013Light, dxSkinVS2010,
   dxSkinWhiteprint, dxSkinXmas2008Blue, cxGraphics, cxLookAndFeels,
-  cxLookAndFeelPainters, Vcl.Menus, cxButtons;
+  cxLookAndFeelPainters, Vcl.Menus, cxButtons, Data.DB, Data.SqlExpr,
+  FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Error, FireDAC.UI.Intf,
+  FireDAC.Phys.Intf, FireDAC.Stan.Def, FireDAC.Phys, FireDAC.Comp.Client,
+  FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.VCLUI.Wait,
+  FireDAC.Phys.SQLiteVDataSet;
 
 type
   TFormSettings = class(TForm)
@@ -41,12 +45,14 @@ type
     actSaveSettings: TAction;
     pnlBottomSettings: TPanel;
     pnlTopSettings: TPanel;
+    FDManager1: TFDManager;
+    FDConnection1: TFDConnection;
+    FDLocalSQL1: TFDLocalSQL;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormDestroy(Sender: TObject);
     procedure actCloseSettingsExecute(Sender: TObject);
     procedure actSaveSettingsExecute(Sender: TObject);
     procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
-
 
   private
     { Private declarations }
@@ -74,7 +80,7 @@ begin
       ItemSettings.AssignValues(ItemSettingsTmp);
       ModalResult := mrOk;
     end else begin
-      ShowMessage('BÅ‚Ä…d zapisu');
+      ShowMessage('B³¹d zapisu');
     end;
   end;
 end;

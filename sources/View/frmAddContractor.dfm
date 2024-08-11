@@ -66,7 +66,7 @@ object FormAddContractor: TFormAddContractor
     Layout = tlCenter
   end
   object edtContractorName: TEdit
-    Left = 292
+    Left = 294
     Top = 76
     Width = 199
     Height = 25

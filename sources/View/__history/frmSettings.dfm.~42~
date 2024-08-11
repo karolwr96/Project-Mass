@@ -76,8 +76,8 @@ object FormSettings: TFormSettings
     TabOrder = 1
   end
   object edtDbUser: TEdit
-    Left = 307
-    Top = 142
+    Left = 308
+    Top = 144
     Width = 199
     Height = 23
     TabOrder = 2
@@ -116,7 +116,6 @@ object FormSettings: TFormSettings
     Color = clWhite
     ParentBackground = False
     TabOrder = 6
-    ExplicitTop = 385
   end
   object pnlTopSettings: TPanel
     Left = 0
@@ -128,8 +127,15 @@ object FormSettings: TFormSettings
     Color = clWhite
     ParentBackground = False
     TabOrder = 7
-    ExplicitLeft = 1
-    ExplicitTop = 46
+  end
+  object btnCreateDB: TButton
+    Left = 474
+    Top = 355
+    Width = 147
+    Height = 28
+    Action = actAddDB
+    Caption = 'Utw'#243'rz baz'#281' danych'
+    TabOrder = 8
   end
   object actSettings: TActionList
     Left = 32
@@ -142,5 +148,22 @@ object FormSettings: TFormSettings
       Caption = 'actSaveSettings'
       OnExecute = actSaveSettingsExecute
     end
+    object actAddDB: TAction
+      Caption = 'actAddDB'
+      OnExecute = actAddDBExecute
+    end
+  end
+  object FDConnection1: TFDConnection
+    Params.Strings = (
+      'User_Name=sysdba'
+      'Password=masterkey'
+      'DriverID=FB')
+    Left = 207
+    Top = 306
+  end
+  object FDGUIxErrorDialog1: TFDGUIxErrorDialog
+    Provider = 'Forms'
+    Left = 340
+    Top = 319
   end
 end

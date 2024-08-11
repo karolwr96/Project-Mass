@@ -24,11 +24,7 @@ uses
   dxSkinWhiteprint, dxSkinXmas2008Blue, cxGraphics, cxLookAndFeels,
   cxLookAndFeelPainters, Vcl.Menus, cxButtons, Data.DB, Data.SqlExpr,
   FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Error, FireDAC.UI.Intf,
-  FireDAC.Phys.Intf, FireDAC.Stan.Def, FireDAC.Phys, FireDAC.Comp.Client,
-  FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.VCLUI.Wait,
-  FireDAC.Phys.SQLiteVDataSet, FireDAC.Phys.FB, FireDAC.Phys.FBDef,
-  FireDAC.VCLUI.Error, FireDAC.Comp.UI, FireDAC.VCLUI.Login,
-  FireDAC.Phys.IBWrapper, FireDAC.Phys.IBBase, DBAccess, Uni;
+  FireDAC.Phys.Intf, FireDAC.Stan.Def, FireDAC.Phys, FireDAC.Comp.Client;
 
 type
   TFormSettings = class(TForm)
@@ -47,12 +43,15 @@ type
     actSaveSettings: TAction;
     pnlBottomSettings: TPanel;
     pnlTopSettings: TPanel;
-    UniConnection1: TUniConnection;
+    FDManager1: TFDManager;
+    FDConnection1: TFDConnection;
+    FDLocalSQL1: TFDLocalSQL;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormDestroy(Sender: TObject);
     procedure actCloseSettingsExecute(Sender: TObject);
     procedure actSaveSettingsExecute(Sender: TObject);
     procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure FDLocalSQL1CloseDataSet(ASender: TObject; const ASchemaName,
 
   private
     { Private declarations }
@@ -100,7 +99,6 @@ procedure TFormSettings.actCloseSettingsExecute(Sender: TObject);
 begin
   Self.Close;
 end;
-
 
 procedure TFormSettings.FormClose(Sender: TObject; var Action: TCloseAction);
 begin

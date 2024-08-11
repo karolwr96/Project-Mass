@@ -140,4 +140,12 @@ object FormSettings: TFormSettings
       OnExecute = actSaveSettingsExecute
     end
   end
+  object UniConnection1: TUniConnection
+    ProviderName = 'FB'
+    Username = 'SYSDBA'
+    Server = '127.0.0.1'
+    Left = 424
+    Top = 317
+    EncryptedPassword = '92FF9EFF8CFF8BFF9AFF8DFF94FF9AFF86FF'
+  end
 end

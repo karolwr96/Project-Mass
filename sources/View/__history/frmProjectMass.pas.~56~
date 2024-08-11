@@ -41,7 +41,7 @@ type
     btnProduct: TdxBarLargeButton;
     pnlBottomMainMenu: TPanel;
     dxBarLargeButton1: TdxBarLargeButton;
-    imgLogo: TImage;
+    Image1: TImage;
     procedure actCloseExecute(Sender: TObject);
     procedure actSettingsExecute(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -76,8 +76,8 @@ begin
    // ShowMessage('Poprawnie dodano kontrahenta!');
    // end;
 
-    //pokazanie wiadomoÅ›ci o dodaniu kontrahenta przeniesione do frmAddContractor
-    //ponowne otwarcia okna dodaj kontrahenta gdy dane zostanÄ… dodane do pliku xml ???
+    //pokazanie wiadomoœci o dodaniu kontrahenta przeniesione do frmAddContractor
+    //ponowne otwarcia okna dodaj kontrahenta gdy dane zostan¹ dodane do pliku xml ???
 end;
 
 procedure TbarMain.actSettingsExecute(Sender: TObject);
