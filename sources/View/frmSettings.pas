@@ -28,7 +28,7 @@ uses
   FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.VCLUI.Wait,
   FireDAC.Phys.SQLiteVDataSet, FireDAC.Phys.FB, FireDAC.Phys.FBDef,
   FireDAC.VCLUI.Error, FireDAC.Comp.UI, FireDAC.VCLUI.Login,
-  FireDAC.Phys.IBWrapper, FireDAC.Phys.IBBase, DBAccess, Uni;
+  FireDAC.Phys.IBWrapper, FireDAC.Phys.IBBase, DBAccess, Uni, MemDS;
 
 type
   TFormSettings = class(TForm)
@@ -67,7 +67,7 @@ implementation
 
 {$R *.dfm}
 
-uses cManagerSettings;
+uses cManagerSettings, MySQLUniProvider;
 
 procedure TFormSettings.actSaveSettingsExecute(Sender: TObject);
 begin

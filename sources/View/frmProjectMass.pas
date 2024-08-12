@@ -42,10 +42,12 @@ type
     pnlBottomMainMenu: TPanel;
     dxBarLargeButton1: TdxBarLargeButton;
     Image1: TImage;
+    actProducts: TAction;
     procedure actCloseExecute(Sender: TObject);
     procedure actSettingsExecute(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure actContractorExecute(Sender: TObject);
+    procedure actProductsExecute(Sender: TObject);
   private
     { Private declarations }
   public
@@ -60,7 +62,7 @@ implementation
 {$R *.dfm}
 
 uses
-  frmSettings, cManagerSettings, frmAddContractor;
+  frmSettings, cManagerSettings, frmAddContractor, frmAddProduct;
 
 procedure TbarMain.actCloseExecute(Sender: TObject);
 begin
@@ -79,6 +81,14 @@ begin
     //pokazanie wiadomoœci o dodaniu kontrahenta przeniesione do frmAddContractor
     //ponowne otwarcia okna dodaj kontrahenta gdy dane zostan¹ dodane do pliku xml ???
 end;
+
+procedure TbarMain.actProductsExecute(Sender: TObject);
+begin
+  if FormProducts = nil then
+     FormProducts := TFormProducts.Create(Application);
+     FormProducts.ShowModal;
+end;
+
 
 procedure TbarMain.actSettingsExecute(Sender: TObject);
 begin

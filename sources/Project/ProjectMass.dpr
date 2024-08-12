@@ -10,7 +10,8 @@ uses
   cItemSettings in '..\Model\cItemSettings.pas',
   frmAddContractor in '..\View\frmAddContractor.pas' {FormAddContractor},
   cManagerContractor in '..\Controller\cManagerContractor.pas',
-  cItemContractor in '..\Model\cItemContractor.pas';
+  cItemContractor in '..\Model\cItemContractor.pas',
+  frmAddProduct in '..\View\frmAddProduct.pas' {FormProducts};
 
 {$R *.res}
 
@@ -18,5 +19,6 @@ begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(TbarMain, barMain);
+  Application.CreateForm(TFormProducts, FormProducts);
   Application.Run;
 end.
