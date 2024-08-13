@@ -1,7 +1,7 @@
 object FormAddContractor: TFormAddContractor
   Left = 0
   Top = 8
-  Caption = 'Dodaj kontrahenta'
+  Caption = 'Kontrahent'
   ClientHeight = 425
   ClientWidth = 620
   Color = clBtnFace
@@ -16,7 +16,6 @@ object FormAddContractor: TFormAddContractor
   OldCreateOrder = True
   Position = poScreenCenter
   OnClose = FormClose
-  OnDestroy = FormDestroy
   OnKeyDown = FormKeyDown
   PixelsPerInch = 96
   TextHeight = 15
@@ -69,7 +68,7 @@ object FormAddContractor: TFormAddContractor
     Left = 294
     Top = 76
     Width = 199
-    Height = 25
+    Height = 23
     AutoSelect = False
     AutoSize = False
     TabOrder = 0

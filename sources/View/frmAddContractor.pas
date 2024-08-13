@@ -33,7 +33,6 @@ type
     procedure actAddContractorExecute(Sender: TObject);
    // procedure SetDefault();
 
-
   private
     procedure clearInputFields();
     function areFieldsFilled() : Boolean;

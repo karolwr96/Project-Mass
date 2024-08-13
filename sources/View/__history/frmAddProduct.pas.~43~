@@ -1,0 +1,89 @@
+unit frmAddProduct;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, System.Actions, Vcl.ActnList,
+  Vcl.StdCtrls, Data.DB, MemDS, DBAccess, Uni, UniProvider, MySQLUniProvider;
+
+type
+  TFormProducts = class(TForm)
+    actionListProduct: TActionList;
+    actClose: TAction;
+    lblProductName: TLabel;
+    edtProductName: TEdit;
+    btnClose: TButton;
+    btnAddProduct: TButton;
+    UniQuery1: TUniQuery;
+    procedure actCloseExecute(Sender: TObject);
+    procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure FormDestroy(Sender: TObject);
+    procedure actAddProductExecute(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FormProducts: TFormProducts;
+
+implementation
+
+{$R *.dfm}
+
+procedure TFormProducts.actAddProductExecute(Sender: TObject);
+var
+  UniConnection: TUniConnection;
+  UniQuery: TUniQuery;
+  InputData: string;
+begin
+  InputData := edtProductName.Text;
+
+  UniConnection := TUniConnection.Create(nil);
+  UniQuery := TUniQuery.Create(nil);
+  try
+    try
+      UniConnection.ProviderName := 'MySQL';
+      UniConnection.Database := 'products';
+      UniConnection.Username := 'root';
+      UniConnection.Password := '';
+      UniConnection.Connect;
+
+      UniQuery.Connection := UniConnection;
+      UniQuery.SQL.Text := 'INSERT INTO products (NAME) VALUES (:InputData)';
+      UniQuery.ParamByName('InputData').AsString := InputData;
+      UniQuery.ExecSQL;
+  Except
+      ShowMessage('Produkt dodano pomyœlnie!');
+    end;
+  finally
+    UniQuery.Free;
+    UniConnection.Free;
+  end;
+end;
+
+procedure TFormProducts.actCloseExecute(Sender: TObject);
+begin
+    Self.Close;
+end;
+
+procedure TFormProducts.FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+begin
+  if Key = VK_ESCAPE then
+    Self.Close;
+end;
+
+procedure TFormProducts.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  Action := caFree;
+end;
+
+procedure TFormProducts.FormDestroy(Sender: TObject);
+begin
+  FormProducts := nil;
+end;
+
+end.

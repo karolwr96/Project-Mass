@@ -129,8 +129,8 @@ object FormSettings: TFormSettings
     TabOrder = 7
   end
   object actSettings: TActionList
-    Left = 32
-    Top = 272
+    Left = 138
+    Top = 312
     object actCloseSettings: TAction
       Caption = 'actCloseSettings'
       OnExecute = actCloseSettingsExecute
@@ -146,7 +146,6 @@ object FormSettings: TFormSettings
     Database = 'products'
     Username = 'root'
     Server = 'localhost'
-    Connected = True
     Left = 336
     Top = 303
   end

@@ -1,36 +1,36 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
 	<Transactions>
-    <Transaction>1899.12.30 00:00:00.000.821,=C:\Programy11\Project-Mass\sources\Helper\uIniXml.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.954,C:\Programy11\Project-Mass\sources\Helper\uHelpFunctions.pas=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.719,=C:\Programy11\Project-Mass\sources\Helper\uHelpFunctions.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.805,=C:\Programy11\Project-Mass\sources\Helper\uHelpFunctions.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.389,C:\Programy11\Project-Mass\sources\Helper\uHelpFunctions.pas=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.177,=C:\Programy10\Project-Mass\sources\Project\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.787,=C:\Programy10\Project-Mass\sources\Project\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.607,C:\Programy10\Project-Mass\sources\Project\Unit1.pas=C:\Programy10\Project-Mass\sources\Controller\cManagerContractor.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.879,C:\Programy11\Project-Mass\sources\View\frmAddContractor.dfm=C:\Programy11\Project-Mass\sources\Project\Unit1.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.511,=C:\Programy11\Project-Mass\sources\Project\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.407,=C:\Programy11\Project-Mass\sources\Project\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.507,C:\Programy11\Project-Mass\sources\Project\Unit1.pas=C:\Programy11\Project-Mass\sources\Controller\cManagerSettings.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.241,=C:\Programy11\Project-Mass\sources\Project\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.850,C:\Programy10\Project-Mass\sources\View\frmAddProduct.pas=C:\Programy10\Project-Mass\sources\Project\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.072,C:\Programy11\Project-Mass\sources\View\frmSettings.pas=C:\Programy11\Project-Mass\sources\Project\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.384,C:\Users\karol\OneDrive\Dokumenty\Embarcadero\Studio\Projects\Project1.dproj=C:\Programy11\Project-Mass\sources\Project\ProjectMass.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.877,=C:\Programy11\Project-Mass\sources\Model\cItemSettings.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.850,C:\Programy10\Project-Mass\sources\View\frmAddProduct.dfm=C:\Programy10\Project-Mass\sources\Project\Unit1.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.879,C:\Programy11\Project-Mass\sources\View\frmAddContractor.pas=C:\Programy11\Project-Mass\sources\Project\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.248,C:\Programy11\Project-Mass\sources\Helper\uEncryptStr.pas=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.660,C:\Users\karol\OneDrive\Dokumenty\Embarcadero\Studio\Projects\Unit1.dfm=C:\Programy11\Project-Mass\sources\View\frmProjectMass.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.672,=C:\Programy11\Project-Mass\sources\Helper\uEncryptStr.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.868,=C:\Programy11\Project-Mass\sources\Helper\uEncryptStr.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.921,C:\Programy10\Project-Mass\sources\Model\cItemContractor.pas=C:\Programy10\Project-Mass\sources\Project\Unit1.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.735,=C:\Programy11\Project-Mass\sources\Helper\uIniXml.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.404,C:\Programy11\Project-Mass\sources\Helper\uIniXml.pas=</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.607,C:\Programy10\Project-Mass\sources\Project\Unit1.pas=C:\Programy10\Project-Mass\sources\Controller\cManagerContractor.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.805,=C:\Programy11\Project-Mass\sources\Helper\uHelpFunctions.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.787,=C:\Programy10\Project-Mass\sources\Project\Unit1.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.858,=C:\Programy10\Project-Mass\sources\Project\Unit1.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.511,=C:\Programy11\Project-Mass\sources\Project\Unit1.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.507,C:\Programy11\Project-Mass\sources\Project\Unit1.pas=C:\Programy11\Project-Mass\sources\Controller\cManagerSettings.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.384,C:\Users\karol\OneDrive\Dokumenty\Embarcadero\Studio\Projects\Project1.dproj=C:\Programy11\Project-Mass\sources\Project\ProjectMass.dproj</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.407,=C:\Programy11\Project-Mass\sources\Project\Unit1.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.879,C:\Programy11\Project-Mass\sources\View\frmAddContractor.dfm=C:\Programy11\Project-Mass\sources\Project\Unit1.dfm</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.072,C:\Programy11\Project-Mass\sources\View\frmSettings.pas=C:\Programy11\Project-Mass\sources\Project\Unit1.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.241,=C:\Programy11\Project-Mass\sources\Project\Unit1.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.877,=C:\Programy11\Project-Mass\sources\Model\cItemSettings.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.879,C:\Programy11\Project-Mass\sources\View\frmAddContractor.pas=C:\Programy11\Project-Mass\sources\Project\Unit1.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.921,C:\Programy10\Project-Mass\sources\Model\cItemContractor.pas=C:\Programy10\Project-Mass\sources\Project\Unit1.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.868,=C:\Programy11\Project-Mass\sources\Helper\uEncryptStr.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.660,C:\Users\karol\OneDrive\Dokumenty\Embarcadero\Studio\Projects\Unit1.dfm=C:\Programy11\Project-Mass\sources\View\frmProjectMass.dfm</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.248,C:\Programy11\Project-Mass\sources\Helper\uEncryptStr.pas=</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.672,=C:\Programy11\Project-Mass\sources\Helper\uEncryptStr.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.389,C:\Programy11\Project-Mass\sources\Helper\uHelpFunctions.pas=</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.954,C:\Programy11\Project-Mass\sources\Helper\uHelpFunctions.pas=</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.609,=C:\Users\karol\OneDrive\Dokumenty\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.821,=C:\Programy11\Project-Mass\sources\Helper\uIniXml.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.072,C:\Programy11\Project-Mass\sources\View\frmSettings.dfm=C:\Programy11\Project-Mass\sources\Project\Unit1.dfm</Transaction>
     <Transaction>1899.12.30 00:00:00.000.660,C:\Users\karol\OneDrive\Dokumenty\Embarcadero\Studio\Projects\Unit1.pas=C:\Programy11\Project-Mass\sources\View\frmProjectMass.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.719,=C:\Programy11\Project-Mass\sources\Helper\uHelpFunctions.pas</Transaction>
-    <Transaction>2024.08.12 20:18:09.177,=C:\Programy10\Project-Mass\sources\Project\Unit1.pas</Transaction>
-    <Transaction>2024.08.12 20:19:03.850,C:\Programy10\Project-Mass\sources\View\frmAddProduct.pas=C:\Programy10\Project-Mass\sources\Project\Unit1.pas</Transaction>
-    <Transaction>2024.08.12 20:19:03.850,C:\Programy10\Project-Mass\sources\View\frmAddProduct.dfm=C:\Programy10\Project-Mass\sources\Project\Unit1.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.609,=C:\Users\karol\OneDrive\Dokumenty\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
   </Transactions>
 	<ProjectSortOrder AutoSort="0" SortType="0">
     <File Path="..\..\sources"/>

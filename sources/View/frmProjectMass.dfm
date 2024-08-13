@@ -17,7 +17,7 @@ object barMain: TbarMain
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 15
-  object Image1: TImage
+  object imgLogo: TImage
     Left = 0
     Top = 127
     Width = 171
@@ -926,7 +926,7 @@ object barMain: TbarMain
     end
     object btnContractor: TdxBarLargeButton
       Action = actContractor
-      Caption = 'Dodaj kontrahenta'
+      Caption = 'Kontrahent'
       Category = 0
       AutoGrayScale = False
       SyncImageIndex = False

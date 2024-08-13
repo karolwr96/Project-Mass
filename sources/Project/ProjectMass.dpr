@@ -19,6 +19,5 @@ begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(TbarMain, barMain);
-  Application.CreateForm(TFormProducts, FormProducts);
   Application.Run;
 end.

@@ -41,7 +41,7 @@ type
     btnProduct: TdxBarLargeButton;
     pnlBottomMainMenu: TPanel;
     dxBarLargeButton1: TdxBarLargeButton;
-    Image1: TImage;
+    imgLogo: TImage;
     actProducts: TAction;
     procedure actCloseExecute(Sender: TObject);
     procedure actSettingsExecute(Sender: TObject);
